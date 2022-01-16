@@ -1,0 +1,565 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap");
+.firstNavBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  list-style: none;
+  grid-row: 1/2;
+  grid-column: 1/13;
+  align-items: center;
+}
+.firstNavBar_logo {
+  grid-column: 1/8;
+}
+.firstNavBar_MyAccount {
+  grid-column: -1/-5;
+  text-align: center;
+}
+@media screen and (min-width: 350px) {
+  .firstNavBar_MyAccount {
+    grid-column: -1/-4;
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 500px) {
+  .firstNavBar_MyAccount {
+    grid-column: -1/-3;
+    font-size: large;
+  }
+}
+@media screen and (min-width: 958px) {
+  .firstNavBar_MyAccount {
+    grid-column: -1/-2;
+    font-size: x-large;
+  }
+}
+
+.account {
+  color: #3a3a3a;
+  font-family: "Source Code Pro", monospace;
+  font-size: small;
+}
+
+.logo_img {
+  max-width: 100%;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.navBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-row: 2/3;
+  grid-column: 1/13;
+  list-style: none;
+  margin-left: 0;
+  align-items: center;
+}
+.navBar_links {
+  color: white;
+  font-family: "Teko", sans-serif;
+  align-items: center;
+  text-align: center;
+  font-size: medium;
+  background-color: #3a3a3a;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  transition: all 0.4s;
+}
+.navBar_links:hover {
+  background-color: #4c96d7;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+@media screen and (min-width: 400px) {
+  .navBar_links {
+    font-size: large;
+  }
+}
+@media screen and (min-width: 600px) {
+  .navBar_links {
+    font-size: larger;
+  }
+}
+@media screen and (min-width: 650px) {
+  .navBar_links {
+    font-size: x-large;
+  }
+}
+
+@media screen {
+  .home {
+    grid-column: 1/2;
+  }
+
+  .classic {
+    grid-column: 2/5;
+  }
+
+  .sports {
+    grid-column: 5/7;
+  }
+
+  .suv {
+    grid-column: 7/9;
+  }
+
+  .trucks {
+    grid-column: 9/11;
+  }
+
+  .used {
+    grid-column: 11/13;
+  }
+
+  .others {
+    grid-column: 13/13;
+  }
+
+  .others {
+    display: none;
+  }
+}
+@media screen and (min-width: 500px) {
+  .home {
+    grid-column: 1/2;
+  }
+
+  .classic {
+    grid-column: 2/4;
+  }
+
+  .sports {
+    grid-column: 4/6;
+  }
+
+  .suv {
+    grid-column: 6/8;
+  }
+
+  .trucks {
+    grid-column: 8/10;
+  }
+
+  .used {
+    grid-column: 10/12;
+  }
+
+  .others {
+    grid-column: 12/13;
+  }
+
+  .others {
+    display: inherit;
+    /*****/
+    background-color: #3a3a3a;
+    height: 8.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 508px) {
+  .others {
+    height: 8.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 519px) {
+  .others {
+    height: 8.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 526px) {
+  .others {
+    height: 8.45vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 529px) {
+  .others {
+    height: 8.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 544px) {
+  .others {
+    height: 8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 558px) {
+  .others {
+    height: 7.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 572px) {
+  .others {
+    height: 7.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 588px) {
+  .others {
+    height: 7.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 595px) {
+  .others {
+    height: 7.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 600px) {
+  .others {
+    height: 7.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 614px) {
+  .others {
+    height: 7.55vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 618px) {
+  .others {
+    height: 7.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 623px) {
+  .others {
+    height: 7.45vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 626px) {
+  .others {
+    height: 7.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 631px) {
+  .others {
+    height: 7.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 650px) {
+  .others {
+    height: 8.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 665px) {
+  .others {
+    height: 8.7vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 673px) {
+  .others {
+    height: 8.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 689px) {
+  .others {
+    height: 8.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 705px) {
+  .others {
+    height: 8.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 714px) {
+  .others {
+    height: 8.1vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 723px) {
+  .others {
+    height: 8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 732px) {
+  .others {
+    height: 7.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 748px) {
+  .others {
+    height: 7.7vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 760px) {
+  .others {
+    height: 7.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 791px) {
+  .others {
+    height: 7.35vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 796px) {
+  .others {
+    height: 7.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 802px) {
+  .others {
+    height: 7.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 802px) {
+  .others {
+    height: 7.1vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 824px) {
+  .others {
+    height: 6.95vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 842px) {
+  .others {
+    height: 6.9vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 848px) {
+  .others {
+    height: 6.75vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 867px) {
+  .others {
+    height: 6.7vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 874px) {
+  .others {
+    height: 6.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 887px) {
+  .others {
+    height: 6.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 900px) {
+  .others {
+    height: 6.45vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 907px) {
+  .others {
+    height: 6.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 915px) {
+  .others {
+    height: 6.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 929px) {
+  .others {
+    height: 6.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 944px) {
+  .others {
+    height: 6.1vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 960px) {
+  .others {
+    height: 6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 975px) {
+  .others {
+    height: 5.85vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1000px) {
+  .others {
+    height: 5.75vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1018px) {
+  .others {
+    height: 5.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1045px) {
+  .others {
+    height: 5.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1064px) {
+  .others {
+    height: 5.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1084px) {
+  .others {
+    height: 5.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1104px) {
+  .others {
+    height: 5.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1125px) {
+  .others {
+    height: 5.1vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1148px) {
+  .others {
+    height: 5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1170px) {
+  .others {
+    height: 4.9vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1194px) {
+  .others {
+    height: 4.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1218px) {
+  .others {
+    height: 4.7vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1245px) {
+  .others {
+    height: 4.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1272px) {
+  .others {
+    height: 4.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1300px) {
+  .others {
+    height: 4.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1337px) {
+  .others {
+    height: 4.35vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1345px) {
+  .others {
+    height: 4.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1360px) {
+  .others {
+    height: 4.2vw;
+  }
+}
+@media screen and (min-width: 900px) {
+  .home {
+    grid-column: 1/2;
+  }
+
+  .classic {
+    grid-column: 2/3;
+  }
+
+  .sports {
+    grid-column: 3/4;
+  }
+
+  .suv {
+    grid-column: 4/5;
+  }
+
+  .trucks {
+    grid-column: 5/6;
+  }
+
+  .used {
+    grid-column: 6/7;
+  }
+
+  .others {
+    grid-column: 7/13;
+  }
+}
+.footer_hr {
+  grid-column: 1/13;
+  height: 0.25em;
+  width: 100%;
+  color: #3a3a3a;
+  background-color: #3a3a3a;
+}
+
+.footer_text {
+  display: grid;
+  grid-column: 1/13;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  font-size: small;
+}
+@media screen and (min-width: 600px) {
+  .footer_text {
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .footer_text {
+    font-size: large;
+  }
+}
+
+[class*=text] {
+  margin: 0em;
+}
+
+.title {
+  font-family: "Teko", sans-serif;
+}
+
+[class*=Bar] {
+  padding-inline-start: 0em;
+  padding-inline-end: 0em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.content {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr repeat(9, 0.1rem) 1fr;
+}
+
+.content_noTemplate {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.2fr repeat(5, 1fr) 1fr;
+}
+
+.header {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 1/3;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 0.3fr);
+}
+
+.footer {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 12/13;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.1fr 0.4fr;
+}
+
+.main {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 2/12;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,34 @@
+@mixin gridForNavLinks ($Ic1:1,$Ic2:2,$mod1:1,$mod2:2,$mod3:3,$LastColumn:13) {
+
+    .home{ 
+        grid-column: #{$Ic1}/#{$Ic2};
+    }
+    $c1:$Ic1+$mod1;
+    $c2:$Ic2+$mod3;
+    .classic{ 
+        grid-column:#{$c1} / #{$c2};
+    }
+    $c1:$c1+$mod3;
+    $c2:$c2+$mod2;
+    .sports{
+        grid-column:#{$c1} / #{$c2};
+    }
+    $c1:$c1+$mod2;
+    $c2:$c2+$mod2;
+    .suv{
+        grid-column:#{$c1} / #{$c2};
+    }
+    $c1:$c1+$mod2;
+    $c2:$c2+$mod2;
+    .trucks{
+        grid-column:#{$c1} / #{$c2};
+    }
+    $c1:$c1+$mod2;
+    $c2:$c2+$mod2;
+    .used{
+        grid-column:#{$c1} / #{$c2};
+    }
+    .others{
+        grid-column:#{$c2}/$LastColumn;
+    }
+}

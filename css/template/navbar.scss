@@ -1,0 +1,239 @@
+@import "mixins.scss";
+$padding1:0.5em;
+$padding_Hoover:$padding1+0.2em;
+
+.navBar{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-row: 2/3;
+    grid-column: 1/13;
+    list-style:none;
+    margin-left: 0;
+    //grid-gap: 0.2em;
+    align-items: center;
+
+    &_links{
+        color:white;
+        font-family: $header-fonts;
+        align-items: center;
+        text-align: center;
+        font-size:medium;
+        background-color: $black;
+        padding-top: $padding1;
+        padding-bottom: $padding1;
+        transition: all 0.4s;
+        &:hover{
+            background-color: $blue;
+            padding-top: $padding_Hoover;
+            padding-bottom: $padding_Hoover;
+            
+        }
+        @media screen and (min-width:400px) {
+            font-size: large;
+        }
+        
+        @media screen and (min-width:600px) {
+            font-size: larger;
+        }
+        @media screen and (min-width:650px) {
+            font-size: x-large;
+        }
+    }
+}
+
+@media screen{ 
+    @include gridForNavLinks;
+    .others{
+        display:none;
+    }
+}
+@media screen and (min-width:500px) { 
+    @include gridForNavLinks ($mod3:2);
+    .others{
+        display:inherit;
+        /*****/
+        background-color: $black;
+        height:8.8vw;
+        @media screen and (min-width:508px){
+            height:8.6vw;
+        }
+        @media screen and (min-width:519px){
+            height:8.5vw;
+        }
+        @media screen and (min-width:526px){
+            height:8.45vw;
+        }
+        @media screen and (min-width:529px){
+            height:8.2vw;
+        }
+        @media screen and (min-width:544px){
+            height:8vw;
+        }
+        @media screen and (min-width:558px){
+            height:7.8vw;
+        }
+        @media screen and (min-width:572px){
+            height:7.6vw;
+        }
+        @media screen and (min-width:588px){
+            height:7.5vw;
+        }
+        @media screen and (min-width:595px){
+            height:7.4vw;
+        }
+        @media screen and (min-width:600px){
+            height:7.6vw;
+        }
+        @media screen and (min-width:614px){
+            height:7.55vw;
+        }
+        @media screen and (min-width:618px){
+            height:7.5vw;
+        }
+        @media screen and (min-width:623px){
+            height:7.45vw;
+        }
+        @media screen and (min-width:626px){
+            height:7.4vw;
+        }
+        @media screen and (min-width:631px){
+            height:7.2vw;
+        }
+        @media screen and (min-width:650px){
+            height:8.8vw;
+        }
+        @media screen and (min-width:665px){
+            height:8.7vw;
+        }
+        @media screen and (min-width:673px){
+            height:8.5vw;
+        }
+        @media screen and (min-width:689px){
+            height:8.3vw;
+        }
+        @media screen and (min-width:705px){
+            height:8.2vw;
+        }
+        @media screen and (min-width:714px){
+            height:8.1vw;
+        }
+        @media screen and (min-width:723px){
+            height:8vw;
+        }
+        @media screen and (min-width:732px){
+            height:7.8vw;
+        }
+        @media screen and (min-width:748px){
+            height:7.7vw;
+        }
+        @media screen and (min-width:760px){
+            height:7.5vw;
+        }
+        @media screen and (min-width:791px){
+            height:7.35vw;
+        }
+        @media screen and (min-width:796px){
+            height:7.3vw;
+        }
+        @media screen and (min-width:802px){
+            height:7.2vw;
+        }
+        @media screen and (min-width:802px){
+            height:7.1vw;
+        }
+        @media screen and (min-width:824px){
+            height:6.95vw;
+        }
+        @media screen and (min-width:842px){
+            height:6.9vw;
+        }
+        @media screen and (min-width:848px){
+            height:6.75vw;
+        }
+        @media screen and (min-width:867px){
+            height:6.7vw;
+        }
+        @media screen and (min-width:874px){
+            height:6.6vw;
+        }
+        @media screen and (min-width:887px){
+            height:6.5vw;
+        }
+        @media screen and (min-width:900px){
+            height:6.45vw;
+        }
+        @media screen and (min-width:907px){
+            height:6.4vw;
+        }
+        @media screen and (min-width:915px){
+            height:6.3vw;
+        }
+        @media screen and (min-width:929px){
+            height:6.2vw;
+        }
+        @media screen and (min-width:944px){
+            height:6.1vw;
+        }
+        @media screen and (min-width:960px){
+            height:6vw;
+        }
+        @media screen and (min-width:975px){
+            height:5.85vw;
+        }
+        @media screen and (min-width:1000px){
+            height:5.75vw;
+        }
+        @media screen and (min-width:1018px){
+            height:5.6vw;
+        }
+        @media screen and (min-width:1045px){
+            height:5.5vw;
+        }
+        @media screen and (min-width:1064px){
+            height:5.4vw;
+        }
+        @media screen and (min-width:1084px){
+            height:5.3vw;
+        }
+        @media screen and (min-width:1104px){
+            height:5.2vw;
+        }
+        @media screen and (min-width:1125px){
+            height:5.1vw;
+        }
+        @media screen and (min-width:1148px){
+            height:5vw;
+        }
+        @media screen and (min-width:1170px){
+            height:4.9vw;
+        }
+        @media screen and (min-width:1194px){
+            height:4.8vw;
+        }
+        @media screen and (min-width:1218px){
+            height:4.7vw;
+        }
+        @media screen and (min-width:1245px){
+            height:4.6vw;
+        }
+        @media screen and (min-width:1272px){
+            height:4.5vw;
+        }
+        @media screen and (min-width:1300px){
+            height:4.4vw;
+        }
+        @media screen and (min-width:1337px){
+            height:4.35vw;
+        }
+        @media screen and (min-width:1345px){
+            height:4.3vw;
+        }
+        @media screen and (min-width:1360px){
+            height:4.2vw;
+        }
+    }
+}
+@media screen and (min-width:900px) { 
+    @include gridForNavLinks ($mod3:1,$mod2:1);
+}
