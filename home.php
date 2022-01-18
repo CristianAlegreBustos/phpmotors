@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" media="screen" href="/phpmotors/css/template/style.css">
   <link rel="stylesheet" media="screen" href="/phpmotors/css/home/style.css">
-  <title>PHP Motors</title>
+  <title>HOME|PHP Motors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 

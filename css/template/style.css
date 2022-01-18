@@ -16,19 +16,21 @@
 @media screen and (min-width: 350px) {
   .firstNavBar_MyAccount {
     grid-column: -1/-4;
-    font-size: medium;
   }
 }
 @media screen and (min-width: 500px) {
   .firstNavBar_MyAccount {
     grid-column: -1/-3;
-    font-size: large;
   }
 }
 @media screen and (min-width: 958px) {
   .firstNavBar_MyAccount {
     grid-column: -1/-2;
-    font-size: x-large;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .firstNavBar_MyAccount {
+    grid-column: -1/-2;
   }
 }
 
@@ -36,6 +38,21 @@
   color: #3a3a3a;
   font-family: "Source Code Pro", monospace;
   font-size: small;
+}
+@media screen and (min-width: 350px) {
+  .account {
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 500px) {
+  .account {
+    font-size: large;
+  }
+}
+@media screen and (min-width: 958px) {
+  .account {
+    font-size: larger;
+  }
 }
 
 .logo_img {
@@ -720,6 +737,11 @@
 @media screen and (min-width: 1000px) {
   .footer_text {
     font-size: large;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .footer_text {
+    font-size: larger;
   }
 }
 
