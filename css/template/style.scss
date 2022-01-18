@@ -29,6 +29,8 @@
     background-color: $white;
     @media screen and (min-width:800px) {
         max-width: 90%;
+        border: 8px solid $blue;
+        border-radius: 0.5em 0.5em;
     }
 }
 .content_noTemplate{

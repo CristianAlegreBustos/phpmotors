@@ -569,6 +569,8 @@
 @media screen and (min-width: 800px) {
   .content {
     max-width: 90%;
+    border: 8px solid #4c96d7;
+    border-radius: 0.5em 0.5em;
   }
 }
 
