@@ -122,9 +122,9 @@
 }
 @media screen and (min-width: 1320px) {
   .product_wrapper {
-    background-size: 75%;
-    background-position-y: 0em;
-    background-position-x: 15em;
+    background-size: 85%;
+    background-position-y: 4em;
+    background-position-x: 6em;
   }
 }
 
