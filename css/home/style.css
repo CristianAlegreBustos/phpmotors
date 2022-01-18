@@ -76,38 +76,55 @@
     background-position-y: 5em;
   }
 }
+@media screen and (min-width: 900px) {
+  .product_wrapper {
+    background-position-y: 7em;
+  }
+}
 @media screen and (min-width: 1000px) {
   .product_wrapper {
-    background-size: 100%;
-    background-position-y: 2em;
-    background-position-x: 0em;
-  }
-}
-@media screen and (min-width: 1120px) {
-  .product_wrapper {
-    background-position-y: 0em;
-    background-position-x: 0em;
-  }
-}
-@media screen and (min-width: 1180px) {
-  .product_wrapper {
-    background-size: 90%;
-    background-position-y: 1em;
-    background-position-x: 0em;
-  }
-}
-@media screen and (min-width: 1270px) {
-  .product_wrapper {
-    background-size: 85%;
-    background-position-y: 2em;
+    background-size: 95%;
+    background-position-y: 8em;
     background-position-x: 4em;
   }
 }
+@media screen and (min-width: 1090px) {
+  .product_wrapper {
+    background-position-y: 7em;
+  }
+}
+@media screen and (min-width: 1132px) {
+  .product_wrapper {
+    background-position-y: 6em;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .product_wrapper {
+    background-size: 90%;
+    background-position-y: 7em;
+  }
+}
+@media screen and (min-width: 1192px) {
+  .product_wrapper {
+    background-position-y: 5em;
+  }
+}
 @media screen and (min-width: 1270px) {
   .product_wrapper {
     background-size: 85%;
-    background-position-y: 1em;
-    background-position-x: 5em;
+    background-position-x: 9em;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .product_wrapper {
+    background-position-y: 3em;
+  }
+}
+@media screen and (min-width: 1320px) {
+  .product_wrapper {
+    background-size: 75%;
+    background-position-y: 0em;
+    background-position-x: 15em;
   }
 }
 
@@ -130,9 +147,14 @@
     font-size: 200%;
   }
 }
+@media screen and (min-width: 630px) {
+  .product_title {
+    margin-left: 0.5em;
+  }
+}
 @media screen and (min-width: 900px) {
   .product_title {
-    font-size: 220%;
+    font-size: 250%;
   }
 }
 .product_description {
@@ -144,13 +166,14 @@
 }
 @media screen and (min-width: 630px) {
   .product_description {
-    grid-column: 2/5;
+    grid-column: 1/5;
+    margin-left: 2em;
   }
 }
 @media screen and (min-width: 1000px) {
   .product_description {
-    grid-column: 1/4;
-    margin-left: 2em;
+    grid-column: 1/5;
+    margin-left: 2.5em;
   }
 }
 .product_buttom {
@@ -158,7 +181,8 @@
   grid-column: 4/10;
   font-family: "Source Code Pro", monospace;
   color: #3a3a3a;
-  font-size: large;
+  font-size: larger;
+  font-weight: 800;
   appearance: none;
   background-color: #4c96d7;
   border-left: 1.2px solid #8d8d8d;
@@ -183,14 +207,20 @@
 }
 @media screen and (min-width: 630px) {
   .product_buttom {
-    grid-column: 2/5;
+    grid-column: 1/5;
     grid-row: 4/5;
-    margin-right: 1.2em;
+    margin-right: 0.5em;
+    margin-left: 2em;
   }
 }
 @media screen and (min-width: 700px) {
   .product_buttom {
-    margin-right: 2.3em;
+    margin-right: 2em;
+  }
+}
+@media screen and (min-width: 770px) {
+  .product_buttom {
+    margin-right: 2.7em;
   }
 }
 @media screen and (min-width: 830px) {
@@ -205,7 +235,9 @@
 }
 @media screen and (min-width: 940px) {
   .product_buttom {
-    margin-right: 6em;
+    grid-column: 1/5;
+    margin-right: 5em;
+    margin-left: 2em;
   }
 }
 @media screen and (min-width: 950px) {
@@ -215,46 +247,54 @@
 }
 @media screen and (min-width: 1000px) {
   .product_buttom {
-    grid-column: 1/3;
+    font-size: larger;
+    grid-column: 1/5;
     grid-row: 4/5;
     margin-top: 0em;
-    margin-left: 2em;
-    margin-right: 0em;
+    margin-left: 1.9em;
+    margin-right: 1.9em;
   }
 }
-@media screen and (min-width: 1150px) {
-  .product_buttom {
-    margin-right: 1em;
-  }
-}
-@media screen and (min-width: 1180px) {
-  .product_buttom {
-    margin-right: 1.4em;
-  }
-}
-@media screen and (min-width: 1180px) {
-  .product_buttom {
-    margin-right: 1.4em;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .product_buttom {
-    margin-right: 1.8em;
-  }
-}
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1090px) {
   .product_buttom {
     margin-right: 2em;
   }
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1090px) {
   .product_buttom {
-    margin-right: 2.2em;
+    margin-right: 3em;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1150px) {
   .product_buttom {
-    margin-right: 2.5em;
+    margin-right: 4em;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .product_buttom {
+    grid-column: 1/4;
+    margin-right: 0em;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .product_buttom {
+    grid-column: 1/4;
+    margin-right: 1em;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .product_buttom {
+    margin-right: 1.5em;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .product_buttom {
+    margin-right: 2em;
+  }
+}
+@media screen and (min-width: 1370px) {
+  .product_buttom {
+    margin-right: 2.2em;
   }
 }
 
@@ -271,13 +311,19 @@
 }
 @media screen and (min-width: 630px) {
   .description_title {
-    font-size: 120%;
+    font-size: 150%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .description_title {
+    font-size: 200%;
   }
 }
 .description_text {
   margin: 0em;
   font-family: "Source Code Pro", monospace;
-  font-size: 75%;
+  font-size: 80%;
+  font-weight: 500;
 }
 @media screen and (min-width: 465px) {
   .description_text {
@@ -286,7 +332,13 @@
 }
 @media screen and (min-width: 630px) {
   .description_text {
-    font-size: 100%;
+    font-size: 110%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .description_text {
+    font-size: 150%;
+    font-weight: 600;
   }
 }
 
