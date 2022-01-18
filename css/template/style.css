@@ -44,6 +44,7 @@
 
 .link {
   text-decoration: none;
+  font-family: "Teko", sans-serif;
 }
 
 .navBar {
@@ -167,14 +168,29 @@
     height: 8.5vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 526px) {
+@media screen and (min-width: 500px) and (min-width: 521px) {
   .others {
     height: 8.45vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 529px) {
+@media screen and (min-width: 500px) and (min-width: 525px) {
+  .others {
+    height: 8.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 528px) {
+  .others {
+    height: 8.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 534px) {
   .others {
     height: 8.2vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 541px) {
+  .others {
+    height: 8.1vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 544px) {
@@ -182,9 +198,19 @@
     height: 8vw;
   }
 }
+@media screen and (min-width: 500px) and (min-width: 554px) {
+  .others {
+    height: 7.9vw;
+  }
+}
 @media screen and (min-width: 500px) and (min-width: 558px) {
   .others {
     height: 7.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 569px) {
+  .others {
+    height: 7.7vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 572px) {
@@ -192,9 +218,19 @@
     height: 7.6vw;
   }
 }
+@media screen and (min-width: 500px) and (min-width: 584px) {
+  .others {
+    height: 7.55vw;
+  }
+}
 @media screen and (min-width: 500px) and (min-width: 588px) {
   .others {
     height: 7.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 591px) {
+  .others {
+    height: 7.45vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 595px) {
@@ -202,39 +238,69 @@
     height: 7.4vw;
   }
 }
+@media screen and (min-width: 500px) and (min-width: 599px) {
+  .others {
+    height: 7.35vw;
+  }
+}
 @media screen and (min-width: 500px) and (min-width: 600px) {
   .others {
     height: 7.6vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 614px) {
-  .others {
-    height: 7.55vw;
-  }
-}
-@media screen and (min-width: 500px) and (min-width: 618px) {
+@media screen and (min-width: 500px) and (min-width: 610px) {
   .others {
     height: 7.5vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 623px) {
+@media screen and (min-width: 500px) and (min-width: 618px) {
+  .others {
+    height: 7.55vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 620px) {
+  .others {
+    height: 7.5vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 625px) {
   .others {
     height: 7.45vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 626px) {
+@media screen and (min-width: 500px) and (min-width: 629px) {
   .others {
     height: 7.4vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 631px) {
+@media screen and (min-width: 500px) and (min-width: 632px) {
+  .others {
+    height: 7.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 642px) {
+  .others {
+    height: 7.25vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 642px) {
   .others {
     height: 7.2vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 650px) {
   .others {
+    height: 8.85vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 659px) {
+  .others {
     height: 8.8vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 663px) {
+  .others {
+    height: 8.75vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 665px) {
@@ -242,14 +308,49 @@
     height: 8.7vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 673px) {
+@media screen and (min-width: 500px) and (min-width: 671px) {
+  .others {
+    height: 8.65vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 675px) {
+  .others {
+    height: 8.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 678px) {
+  .others {
+    height: 8.55vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 683px) {
   .others {
     height: 8.5vw;
   }
 }
+@media screen and (min-width: 500px) and (min-width: 683px) {
+  .others {
+    height: 8.45vw;
+  }
+}
 @media screen and (min-width: 500px) and (min-width: 689px) {
   .others {
+    height: 8.4vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 694px) {
+  .others {
+    height: 8.35vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 699px) {
+  .others {
     height: 8.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 703px) {
+  .others {
+    height: 8.25vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 705px) {
@@ -257,17 +358,22 @@
     height: 8.2vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 714px) {
+@media screen and (min-width: 500px) and (min-width: 711px) {
   .others {
     height: 8.1vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 723px) {
+@media screen and (min-width: 500px) and (min-width: 717px) {
   .others {
     height: 8vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 732px) {
+@media screen and (min-width: 500px) and (min-width: 728px) {
+  .others {
+    height: 7.9vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 737px) {
   .others {
     height: 7.8vw;
   }
@@ -277,19 +383,39 @@
     height: 7.7vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 760px) {
+@media screen and (min-width: 500px) and (min-width: 757px) {
+  .others {
+    height: 7.65vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 763px) {
+  .others {
+    height: 7.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 767px) {
+  .others {
+    height: 7.55vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 773px) {
   .others {
     height: 7.5vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 791px) {
+@media screen and (min-width: 500px) and (min-width: 778px) {
   .others {
-    height: 7.35vw;
+    height: 7.4vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 796px) {
+@media screen and (min-width: 500px) and (min-width: 794px) {
   .others {
     height: 7.3vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 799px) {
+  .others {
+    height: 7.25vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 802px) {
@@ -297,62 +423,62 @@
     height: 7.2vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 802px) {
+@media screen and (min-width: 500px) and (min-width: 810px) {
   .others {
     height: 7.1vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 824px) {
+@media screen and (min-width: 500px) and (min-width: 822px) {
   .others {
-    height: 6.95vw;
+    height: 7vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 842px) {
+@media screen and (min-width: 500px) and (min-width: 833px) {
   .others {
     height: 6.9vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 848px) {
+@media screen and (min-width: 500px) and (min-width: 846px) {
   .others {
-    height: 6.75vw;
+    height: 6.8vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 867px) {
+@media screen and (min-width: 500px) and (min-width: 858px) {
   .others {
     height: 6.7vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 874px) {
+@media screen and (min-width: 500px) and (min-width: 871px) {
   .others {
     height: 6.6vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 887px) {
+@media screen and (min-width: 500px) and (min-width: 886px) {
   .others {
     height: 6.5vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 900px) {
+@media screen and (min-width: 500px) and (min-width: 898px) {
   .others {
     height: 6.45vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 907px) {
+@media screen and (min-width: 500px) and (min-width: 905px) {
   .others {
     height: 6.4vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 915px) {
+@media screen and (min-width: 500px) and (min-width: 912px) {
   .others {
     height: 6.3vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 929px) {
+@media screen and (min-width: 500px) and (min-width: 926px) {
   .others {
     height: 6.2vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 944px) {
+@media screen and (min-width: 500px) and (min-width: 941px) {
   .others {
     height: 6.1vw;
   }
@@ -362,9 +488,19 @@
     height: 6vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 975px) {
+@media screen and (min-width: 500px) and (min-width: 972px) {
   .others {
-    height: 5.85vw;
+    height: 5.95vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 981px) {
+  .others {
+    height: 5.9vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 990px) {
+  .others {
+    height: 5.8vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 1000px) {
@@ -372,9 +508,24 @@
     height: 5.75vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1018px) {
+@media screen and (min-width: 500px) and (min-width: 1015px) {
+  .others {
+    height: 5.7vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1024px) {
+  .others {
+    height: 5.65vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1033px) {
   .others {
     height: 5.6vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1042px) {
+  .others {
+    height: 5.55vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 1045px) {
@@ -392,14 +543,29 @@
     height: 5.3vw;
   }
 }
+@media screen and (min-width: 500px) and (min-width: 1101px) {
+  .others {
+    height: 5.25vw;
+  }
+}
 @media screen and (min-width: 500px) and (min-width: 1104px) {
   .others {
     height: 5.2vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1125px) {
+@media screen and (min-width: 500px) and (min-width: 1122px) {
+  .others {
+    height: 5.15vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1133px) {
   .others {
     height: 5.1vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1144px) {
+  .others {
+    height: 5.05vw;
   }
 }
 @media screen and (min-width: 500px) and (min-width: 1148px) {
@@ -407,22 +573,42 @@
     height: 5vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1170px) {
+@media screen and (min-width: 500px) and (min-width: 1168px) {
+  .others {
+    height: 4.95vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1179px) {
   .others {
     height: 4.9vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1194px) {
+@media screen and (min-width: 500px) and (min-width: 1190px) {
+  .others {
+    height: 4.85vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1200px) {
   .others {
     height: 4.8vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1218px) {
+@media screen and (min-width: 500px) and (min-width: 1215px) {
+  .others {
+    height: 4.75vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1228px) {
   .others {
     height: 4.7vw;
   }
 }
-@media screen and (min-width: 500px) and (min-width: 1245px) {
+@media screen and (min-width: 500px) and (min-width: 1241px) {
+  .others {
+    height: 4.65vw;
+  }
+}
+@media screen and (min-width: 500px) and (min-width: 1250px) {
   .others {
     height: 4.6vw;
   }
