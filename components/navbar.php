@@ -7,4 +7,4 @@
     <li class="navBar_links used"><a class="link">Used</a></li>
     <li class="others"><a class="link"></a></li>
     
-<ul>
+</ul>
