@@ -1,6 +1,6 @@
 <ul class="firstNavBar">
     <li class="firstNavBar_logo"><a class="link" href="#">
-    <img class="logo_img" src="../phpmotors/images/site/logo.png" alt="PHP Motors Logo">
+    <img class="logo_img" src="../images/site/logo.png" alt="PHP Motors Logo">
     </a>
 
     </li>
