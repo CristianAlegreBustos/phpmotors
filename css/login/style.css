@@ -1,0 +1,177 @@
+.content {
+  grid-template-rows: 0.5fr repeat(3, 1fr);
+}
+
+.header {
+  grid-row: 1/2;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(12, 0.5fr);
+  grid-template-rows: repeat(8, 0.5fr);
+  grid-column: 1/13;
+  grid-row: 2/4;
+}
+
+.title {
+  grid-row: 1/2;
+  grid-column: 1/13;
+  margin-left: 0.8rem;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: larger;
+  }
+}
+@media screen and (min-width: 900px) {
+  .title {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: xx-large;
+  }
+}
+
+.form {
+  display: grid;
+  grid-row: 2/7;
+  grid-column: 1/13;
+  grid-template-columns: repeat(12, 0.5fr);
+  grid-template-rows: repeat(6, 0.5fr);
+}
+
+[class*=label] {
+  font-family: "Source Code Pro", monospace;
+  font-size: medium;
+  font-weight: 600;
+  margin-left: 0.8rem;
+  margin-top: 0.3rem;
+  grid-column: 1/13;
+}
+@media screen and (min-width: 768px) {
+  [class*=label] {
+    grid-column: 1/9;
+    font-size: larger;
+  }
+}
+@media screen and (min-width: 900px) {
+  [class*=label] {
+    grid-column: 1/7;
+    font-size: 100%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  [class*=label] {
+    grid-column: 1/5;
+    font-size: 130%;
+  }
+}
+
+.label_email {
+  grid-row: 1/2;
+}
+
+.label_pass {
+  grid-row: 3/4;
+}
+
+[class*=input] {
+  border-color: #3a3a3a;
+  border-radius: 0.5em;
+  appearance: none;
+  grid-column: 1/13;
+  margin-left: 0.8rem;
+  font-family: "Source Code Pro", monospace;
+}
+[class*=input]:focus {
+  background-color: #a6cbeb;
+}
+@media screen and (min-width: 768px) {
+  [class*=input] {
+    grid-column: 1/9;
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 900px) {
+  [class*=input] {
+    grid-column: 1/7;
+    font-size: large;
+  }
+}
+@media screen and (min-width: 1000px) {
+  [class*=input] {
+    grid-column: 1/5;
+  }
+}
+
+.input_email {
+  grid-row: 2/3;
+}
+
+.input_pass {
+  grid-row: 4/5;
+}
+
+.button {
+  grid-column: 1/13;
+  grid-row: 6/7;
+  background-color: #a6cbeb;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: large;
+  margin-left: 0.8rem;
+  cursor: pointer;
+  appearance: none;
+  border: 0.2rem solid #4c96d7;
+  border-radius: 0.5rem;
+}
+.button:hover {
+  background-color: #4c96d7;
+  border: 0.2rem solid #a6cbeb;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    grid-column: 1/9;
+  }
+}
+@media screen and (min-width: 900px) {
+  .button {
+    grid-column: 1/7;
+    font-size: large;
+    font-weight: 800;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .button {
+    grid-column: 1/5;
+    font-size: larger;
+  }
+}
+
+.text {
+  grid-column: 1/13;
+  grid-row: 8/9;
+  color: #3a3a3a;
+  text-decoration: none;
+  font-size: large;
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .text {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .text {
+    font-size: 170%;
+  }
+}
+
+.footer {
+  grid-row: 4/5;
+}
+
+/*# sourceMappingURL=style.css.map */

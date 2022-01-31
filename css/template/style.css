@@ -85,6 +85,9 @@
   padding-bottom: 0.5em;
   transition: all 0.4s;
 }
+.navBar_links > * {
+  color: white;
+}
 .navBar_links:hover {
   background-color: #4c96d7;
   padding-top: 0.7em;
@@ -111,23 +114,28 @@
     grid-column: 1/2;
   }
 
-  .classic {
+  .classic,
+.Classic {
     grid-column: 2/5;
   }
 
-  .sports {
+  .sports,
+.Sports {
     grid-column: 5/7;
   }
 
-  .suv {
+  .suv,
+.SUV {
     grid-column: 7/9;
   }
 
-  .trucks {
+  .trucks,
+.Trucks {
     grid-column: 9/11;
   }
 
-  .used {
+  .used,
+.Used {
     grid-column: 11/13;
   }
 
@@ -144,23 +152,28 @@
     grid-column: 1/2;
   }
 
-  .classic {
+  .classic,
+.Classic {
     grid-column: 2/4;
   }
 
-  .sports {
+  .sports,
+.Sports {
     grid-column: 4/6;
   }
 
-  .suv {
+  .suv,
+.SUV {
     grid-column: 6/8;
   }
 
-  .trucks {
+  .trucks,
+.Trucks {
     grid-column: 8/10;
   }
 
-  .used {
+  .used,
+.Used {
     grid-column: 10/12;
   }
 
@@ -690,23 +703,28 @@
     grid-column: 1/2;
   }
 
-  .classic {
+  .classic,
+.Classic {
     grid-column: 2/3;
   }
 
-  .sports {
+  .sports,
+.Sports {
     grid-column: 3/4;
   }
 
-  .suv {
+  .suv,
+.SUV {
     grid-column: 4/5;
   }
 
-  .trucks {
+  .trucks,
+.Trucks {
     grid-column: 5/6;
   }
 
-  .used {
+  .used,
+.Used {
     grid-column: 6/7;
   }
 

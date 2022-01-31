@@ -1,12 +1,12 @@
 <ul class="firstNavBar">
     <li class="firstNavBar_logo"><a class="link" href="#">
-    <img class="logo_img" src="../phpmotors/images/site/logo.png" alt="PHP Motors Logo">
+    <img class="logo_img" src="/phpmotors/images/site/logo.png" alt="PHP Motors Logo">
     </a>
 
     </li>
-    <li class="firstNavBar_MyAccount"><a class="link account" href="#">My Account</a></li>
+    <li class="firstNavBar_MyAccount"><a class="link account" href="http://lvh.me/phpmotors/accounts/index.php?action=login">My Account</a></li>
 </ul>
 
- 
-    
+
+
 

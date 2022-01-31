@@ -3,7 +3,7 @@
     *
     *
     */
-    function phpmotorsConnect(){ 
+    function phpmotorsConnect(){
     $server='mysql';
     $dbname='phpmotors';
     $username='iClient';
@@ -13,17 +13,14 @@
 
     try {
         $link= new PDO($dsn, $username, $password, $options);
-        if (is_object($link)){
-            echo 'It worked';
-        }
+        return $link;
     } catch (PDOException $e) {
         /* Redirect to a different page in the current directory that was requested */
-        $host  = $_SERVER['HTTP_HOST'];
-        $extra = '/phpmotors/views/500.php';
+        $host=$_SERVER['HTTP_HOST'];
+        $extra='/phpmotors/view/500.php';
         header("Location: http://$host/$extra");
         exit;
     }
     }
-    phpmotorsConnect();
-    
+    phpmotorsConnect()
 ?>
