@@ -23,6 +23,14 @@
         </header>
         <main class="main">
             <h1 class="title">Sing In</h1>
+
+            <?php
+            //Display Succes Messages
+                if (isset($message)) {
+                echo $message;
+                }
+            ?>
+
             <form class="form form_SingIn" action="" method="POST" id="SingIn">
                 <label class="label_email"  for="clientEmail">Email</label>
                 <input class="input_email" name="clientEmail" id="clientEmail" type="text">

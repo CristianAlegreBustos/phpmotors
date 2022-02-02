@@ -22,18 +22,26 @@
         </header>
         <main class="main">
             <h1 class="title">Register</h1>
-            <form class="form form_Register" action="/phpmotors" method="POST" id="Register">
+            <?php
+            //Display Error Messages
+                if (isset($message)) {
+                echo $message;
+                }
+            ?>
+            <form class="form form_Register" action="/phpmotors/accounts/index.php" method="POST" id="Register">
                 <label class="label_Firstname" for="clientFirstname">First Name</label>
-                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" required>
+                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" >
 
                 <label class="label_Lastname" for="clientLastname">Last Name</label>
-                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" required>
+                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" >
 
                 <label class="label_email"  for="clientEmail">Email</label>
-                <input class="input_email" name="clientEmail" id="clientEmail" type="text" required>
+                <input class="input_email" name="clientEmail" id="clientEmail" type="text" >
                 <label class="label_pass" for="clientPassword">Password</label>
-                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" required>
-                <button class="button LogIn" type="button">Register</button>
+                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" >
+                <input class="button LogIn" name="submit" type="submit" value="Register">
+                <!-- Add the action name - value pair -->
+                <input type="hidden" name="action" value="registerUser">
           </form>
         </main>
         <footer class="footer">

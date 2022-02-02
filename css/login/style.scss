@@ -141,6 +141,25 @@ $grid-column: #{1}/#{13};
   }
 }
 
+.display_error {
+  @extend .text;
+  grid-row: 7/8;
+  text-align: start;
+  color: red;
+  font-weight: 400;
+  margin-left: 0.8em;
+  @media screen and (min-width: 900px) {
+    font-size: x-large;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 170%;
+  }
+}
+.display_sucess {
+  @extend .display_error;
+  color: $black;
+}
+
 .footer {
   grid-row: 4/5;
 }

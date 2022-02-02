@@ -106,6 +106,24 @@ $grid-column: #{1}/#{13};
 .input_pass {
   grid-row: 8/9;
 }
+.display_error {
+  grid-column: $grid-column;
+  text-decoration: none;
+  font-size: large;
+  color: red;
+  font-weight: 600;
+  margin-left: 0.8em;
+  @media screen and (min-width: 900px) {
+    font-size: x-large;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 170%;
+  }
+}
+.display_sucess {
+  @extend .display_error;
+  color: $black;
+}
 .button {
   grid-column: $grid-column;
   grid-row: 10/11;
