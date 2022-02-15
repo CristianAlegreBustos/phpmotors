@@ -1,68 +1,66 @@
-@import"settings.scss";
-@import "logo_navbar.scss";
-@import "navbar.scss";
-@import "footer.scss";
-@import "content.scss";
-@import "mixins.scss";
+@import 'settings.scss';
+@import 'logo_navbar.scss';
+@import 'navbar.scss';
+@import 'footer.scss';
+@import 'content.scss';
+@import 'mixins.scss';
 
-.body{
-    @media screen and (min-width:800px) {
-        background-image:url("../../images/site/small_check.jpg");
-    }
-    
-
+.body {
+  @media screen and (min-width: 800px) {
+    background-image: url('../../images/site/small_check.jpg');
+  }
 }
 
-[class*="Bar"]{
-    padding-inline-start:0em;
-    padding-inline-end:0em;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+[class*='navBar'] {
+  padding-inline-start: 0em;
+  padding-inline-end: 0em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  flex-grow: 1;
 }
 
-.content{
-    display:grid;
-    max-width: 100%;
-    margin: 0 auto;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 1fr 1fr repeat(9,0.1rem) 1fr ;
-    background-color: $white;
-    @media screen and (min-width:800px) {
-        max-width: 90%;
-        border: 8px solid $blue;
-        border-radius: 0.5em 0.5em;
-    }
+.content {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr repeat(9, 0.1rem) 1fr;
+  background-color: $white;
+  @media screen and (min-width: 800px) {
+    max-width: 90%;
+    border: 8px solid $blue;
+    border-radius: 0.5em 0.5em;
+  }
 }
-.content_noTemplate{
-    display:grid;
-    max-width: 100%;
-    margin: 0 auto;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows:0.2fr repeat(5,1fr) 1fr;
-    background-color: $white;
-    @media screen and (min-width:800px) {
-        max-width: 90%;
-        border: 8px solid $blue;
-        border-radius: 0.5em 0.5em;
-        
-    }
+.content_noTemplate {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.2fr repeat(5, 1fr) 1fr;
+  background-color: $white;
+  @media screen and (min-width: 800px) {
+    max-width: 90%;
+    border: 8px solid $blue;
+    border-radius: 0.5em 0.5em;
+  }
 }
-.header{
-    display: grid;
-    grid-column: 1/13;
-    grid-row:1/2;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(2,0.3fr);
+.header {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 1/2;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 0.3fr);
 }
-.footer{
-    display: grid;
-    grid-column: 1/13;
-    grid-row:12/13;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 0.1fr 0.4fr;
+.footer {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 12/13;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.1fr 0.4fr;
 }
-.main{
-    display: grid;
-    grid-column: 1/13;
-    grid-row:2/12;
+.main {
+  display: grid;
+  grid-column: 1/13;
+  grid-row: 2/12;
 }

@@ -23,7 +23,7 @@ $classifications = getClassifications();
   $navList .="<li class='others'><a class='link'></a></li>";
   $navList .= '</ul>';
 
-//  echo $navList;
+// echo $navList;
 //exit;
 
   $action = filter_input(INPUT_POST, 'action');

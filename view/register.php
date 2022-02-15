@@ -30,16 +30,16 @@
             ?>
             <form class="form form_Register" action="/phpmotors/accounts/index.php" method="POST" id="Register">
                 <label class="label_Firstname" for="clientFirstname">First Name</label>
-                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" >
+                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" required>
 
                 <label class="label_Lastname" for="clientLastname">Last Name</label>
-                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" >
+                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" required>
 
                 <label class="label_email"  for="clientEmail">Email</label>
-                <input class="input_email" name="clientEmail" id="clientEmail" type="text" >
+                <input class="input_email" name="clientEmail" id="clientEmail" type="text" required>
                 <label class="label_pass" for="clientPassword">Password</label>
-                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" >
-                <input class="button LogIn" name="submit" type="submit" value="Register">
+                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" required>
+                <input class="button" name="submit" type="submit" value="Register">
                 <!-- Add the action name - value pair -->
                 <input type="hidden" name="action" value="registerUser">
           </form>

@@ -1,11 +1,12 @@
-@import 'mixins.scss';
+//@import 'mixins.scss';
 $padding1: 0.5em;
 $padding_Hoover: $padding1 + 0.2em;
 
 .navBar {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
+  //display: grid;
+  //grid-template-columns: repeat(12, 1fr);
+  //grid-template-rows: 1fr;
+  display: flex;
   grid-row: 2/3;
   grid-column: 1/13;
   list-style: none;
@@ -44,14 +45,11 @@ $padding_Hoover: $padding1 + 0.2em;
   }
 }
 
-@media screen {
-  @include gridForNavLinks;
-  .others {
-    display: none;
-  }
+.others {
+  display: none;
+  flex-grow: 4;
 }
 @media screen and (min-width: 500px) {
-  @include gridForNavLinks($mod3: 2);
   .others {
     display: inherit;
     /*****/
@@ -102,38 +100,44 @@ $padding_Hoover: $padding1 + 0.2em;
     @media screen and (min-width: 591px) {
       height: 7.45vw;
     }
+    @media screen and (min-width: 593px) {
+      height: 7.4vw;
+    }
     @media screen and (min-width: 595px) {
       height: 7.4vw;
     }
-    @media screen and (min-width: 599px) {
+    @media screen and (min-width: 598px) {
       height: 7.35vw;
     }
     @media screen and (min-width: 600px) {
       height: 7.6vw;
     }
-    @media screen and (min-width: 610px) {
-      height: 7.5vw;
-    }
-    @media screen and (min-width: 618px) {
+    @media screen and (min-width: 608px) {
       height: 7.55vw;
     }
-    @media screen and (min-width: 620px) {
+    @media screen and (min-width: 611px) {
       height: 7.5vw;
     }
-    @media screen and (min-width: 625px) {
+    @media screen and (min-width: 617px) {
       height: 7.45vw;
     }
-    @media screen and (min-width: 629px) {
-      height: 7.4vw;
+    @media screen and (min-width: 621px) {
+      height: 7.35vw;
     }
-    @media screen and (min-width: 632px) {
+    @media screen and (min-width: 629px) {
       height: 7.3vw;
     }
-    @media screen and (min-width: 642px) {
+    @media screen and (min-width: 633px) {
       height: 7.25vw;
     }
-    @media screen and (min-width: 642px) {
+    @media screen and (min-width: 638px) {
       height: 7.2vw;
+    }
+    @media screen and (min-width: 641px) {
+      height: 7.15vw;
+    }
+    @media screen and (min-width: 647px) {
+      height: 7.1vw;
     }
     @media screen and (min-width: 650px) {
       height: 8.85vw;
@@ -368,5 +372,5 @@ $padding_Hoover: $padding1 + 0.2em;
   }
 }
 @media screen and (min-width: 900px) {
-  @include gridForNavLinks($mod3: 1, $mod2: 1);
+  // @include gridForNavLinks($mod3: 1, $mod2: 1);
 }
