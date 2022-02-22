@@ -29,7 +29,7 @@
   grid-column: 1/13;
   grid-row: 2/6;
   grid-template-columns: repeat(12, 0.5fr);
-  grid-template-rows: 0.4fr repeat(6, 0.5fr);
+  grid-template-rows: 0.1fr repeat(6, 0.5fr);
 }
 @media screen and (min-width: 700px) {
   .main_addVehicles, .main_carClassification {
@@ -85,6 +85,11 @@
     font-size: 2.2em;
   }
 }
+@media screen and (min-width: 700px) {
+  .title_classification {
+    font-size: 3em;
+  }
+}
 
 .form_inventory {
   display: grid;
@@ -94,8 +99,8 @@
 }
 @media screen and (min-width: 700px) {
   .form_inventory {
-    grid-template-rows: repeat(20, 0.9fr);
-    row-gap: 0.5em;
+    grid-template-rows: repeat(20, 0.5fr);
+    row-gap: 0.1em;
   }
 }
 
@@ -105,6 +110,10 @@
   font-size: medium;
   align-items: center;
 }
+[class*=label]:after {
+  content: "*";
+  color: red;
+}
 @media screen and (min-width: 700px) {
   [class*=label] {
     font-size: x-large;
@@ -112,12 +121,20 @@
 }
 
 [class*=input] {
-  display: flex;
+  border-color: #3a3a3a;
+  border-radius: 0.5em;
   font-family: "Source Code Pro", monospace;
   font-size: medium;
   align-items: center;
   background-color: #a6cbeb;
   appearance: none;
+  height: 3em;
+}
+[class*=input]:invalid {
+  background-color: pink;
+}
+[class*=input]:focus, [class*=input]:hover {
+  background-color: #a6cbeb;
 }
 
 .select_classification {
@@ -130,6 +147,7 @@
   text-align: center;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
 }
 .select_classification:hover {
   font-size: larger;
@@ -141,6 +159,10 @@
 .button {
   grid-row: 19/20;
   border-radius: 0.5em;
+  margin: 0 auto;
+  margin-top: 3em;
+  height: 3em;
+  width: 90%;
   border: 1px solid black;
   background-color: white;
   color: black;
@@ -156,12 +178,15 @@
 }
 @media screen and (min-width: 900px) {
   .button {
+    height: 4em;
     font-weight: 600;
   }
 }
 @media screen and (min-width: 1000px) {
   .button {
+    height: 5em;
     font-size: large;
+    margin-top: 0.5em;
   }
 }
 
@@ -202,6 +227,11 @@
     font-size: x-large;
   }
 }
+@media screen and (min-width: 950px) {
+  .label_NewClassification {
+    font-size: xx-large;
+  }
+}
 
 .input_NewClassification {
   margin: 0 auto;
@@ -215,11 +245,13 @@
 }
 @media screen and (min-width: 700px) {
   .input_NewClassification {
-    height: 20%;
+    height: 30%;
   }
 }
 @media screen and (min-width: 850px) {
   .input_NewClassification {
+    height: 35%;
+    width: 100%;
     font-size: larger;
   }
 }
@@ -242,7 +274,7 @@
   margin: 0 auto;
   flex-direction: column;
   margin-top: 2em;
-  row-gap: 0.5em;
+  row-gap: 2em;
   grid-column: 1/13;
 }
 
@@ -251,6 +283,27 @@
   margin-top: 3em;
   height: 3em;
   width: 90%;
+}
+
+.instructions {
+  display: none;
+  grid-column: 1/13;
+  text-align: center;
+  align-items: center;
+  color: #4c96d7;
+  font-weight: 400;
+  margin-left: 0.8em;
+}
+@media screen and (min-width: 900px) {
+  .instructions {
+    grid-column: 1/13;
+  }
+}
+
+.instruction {
+  color: #4c96d7;
+  font-weight: 400;
+  margin-left: 0.8em;
 }
 
 /*# sourceMappingURL=style.css.map */

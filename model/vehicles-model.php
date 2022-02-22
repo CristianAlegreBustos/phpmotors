@@ -21,7 +21,7 @@ function regNewVehicle($invMake,$invModel,$invDescription,$invImage,$invThumbnai
     $stmt ->bindValue(':invPrice',$invPrice, PDO::PARAM_STR);
     $stmt ->bindValue(':invStock',$invStock, PDO::PARAM_STR);
     $stmt ->bindValue(':invColor',$invColor, PDO::PARAM_STR);
-    $stmt ->bindValue(':classificationId',$classificationId, PDO::PARAM_INT);
+    $stmt ->bindValue(':classificationId',$classificationId, PDO::PARAM_STR);
      // Insert the data
     $stmt->execute();
     // Ask how many rows changed as a result of our insert

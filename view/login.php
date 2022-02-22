@@ -33,15 +33,43 @@
 
             <form class="form form_SingIn" action="" method="POST" id="SingIn">
                 <label class="label_email"  for="clientEmail">Email</label>
-                <input class="input_email" name="clientEmail" id="clientEmail" type="text">
+                <input class="input_email" name="clientEmail" id="clientEmail" type="email" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> placeholder='Enter a valid email address' required>
                 <label class="label_pass" for="clientPassword">Password</label>
-                <input class="input_pass" name="clientPassword" id="clientPassword" type="password">
-                <button class="button LogIn" type="button">Log In</button>
+                <span class="instructions" id="instruction">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+                <input class="input_pass" name="clientPassword" id="clientPassword" type="password"  required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter the Password">
+                <input class="button LogIn" name="submit" type="submit" value="Log in">
+                 <!-- Add the action name - value pair -->
+                 <input type="hidden" name="action" value="Login">
           </form>
-          <p class="text"><a class="register_link" href="http://lvh.me/phpmotors/accounts/index.php?action=register" target="_blank">Not a member Yet?</a></p>
+          <p class="text"><a class="register_link" href="/phpmotors/accounts/index.php?action=register" target="_blank">Not a member Yet?</a></p>
         </main>
         <footer class="footer">
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/footer.php' ?>
         </footer>
     </div>
+
+<script>
+    const elem = document.activeElement;
+    let inputPassword=document.getElementById("clientPassword");
+    let spanInstruction=document.getElementById('instruction');
+
+    inputPassword.addEventListener('mouseup',verify);
+    let click=0;
+    function verify(){
+        click++;
+        let result= click%2;
+        function displaySpan(){
+            if (inputPassword === document.activeElement && result!==0){
+                    spanInstruction.style.display="flex";
+            }else{
+                spanInstruction.style.display="none";
+            }
+        }
+
+        displaySpan();
+    }
+</script>
+
+
 </body>
+</html>

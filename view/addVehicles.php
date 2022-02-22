@@ -32,22 +32,22 @@
             <?php echo $classificationList; ?>
             <label class="label_make" for="invMake" >Make</label>
             <input class="input_make" name="invMake"
-            id="invMake" type="text" >
+            id="invMake" maxlength="30" type="text" <?php if(isset($invMake)){echo "value='$invMake'";} ?> required placeholder="Enter the Brand of the car">
             <label class="label_model" for="invModel">Model</label>
-            <input type="text" class="input_model" name="invModel" id="invModel">
+            <input type="text" class="input_model" name="invModel" maxlength="30" id="invModel" <?php if(isset($invModel)){echo "value='$invModel'";} ?> placeholder="Enter the model of the car" required >
             <label for="invDescription" class="label_description">Description</label>
-            <textarea name="invDescription" id="invDescription" class="input_description" form="Update">Enter description here...</textarea>
+            <textarea name="invDescription" id="invDescription" class="input_description" form="Update"  required placeholder="Enter the description here"><?php if(isset($invDescription)){echo $invDescription;}?></textarea>
             <label for="invImage" class="label_imagePath">Image Path</label>
-            <input type="text" class="input_imagePath" name=invImage id="invImage">
+            <input type="text" class="input_imagePath" name=invImage maxlength="50" id="invImage" <?php if(isset($invImage)){echo "value='$invImage'";} ?> required placeholder="Enter the path to the image file">
             <label for="invThumbnail" class="label_thumbnailPath">Thumbnail Path</label>
-            <input type="text" id="invThumbnail" name="invThumbnail" class="input_thumbnail">
+            <input type="text" id="invThumbnail" name="invThumbnail" maxlength="50"class="input_thumbnail" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";} ?> required placeholder="Enter the path to the Thumbnail" >
             <label for="invPrice" class="label_price">Price</label>
-            <input type="text" name="invPrice" id="invPrice" class="input_price">
+            <input type="number" name="invPrice" id="invPrice" class="input_price" <?php if(isset($invPrice)){echo "value='$invPrice'";} ?> required placeholder="Enter the price of the car" >
             <label for="invStock" class="label_stock">Stock Available</label>
-            <input type="text" class="input_stock" name="invStock" id="invStock">
+            <input type="number" class="input_stock" name="invStock" id="invStock" <?php if(isset($invStock)){echo "value='$invStock'";} ?> required placeholder="Enter the avaliable stock for this car" >
             <label for="invColor" class="label_color">Color</label>
-            <input type="text" class="input_color" name="invColor" id="invColor">
-            <input class="button" name="submit" type="submit" value="Update">
+            <input type="text" class="input_color" name="invColor" maxlength="20" id="invColor" <?php if(isset($invColor)){echo "value='$invColor'";} ?> required placeholder="Enter the color of the car" >
+            <input class="button classification" name="submit" type="submit" value="Update">
             <!-- Add the action name - value pair -->
             <input type="hidden" name="action" value="updateInventory">
             </form>
@@ -57,4 +57,37 @@
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/footer.php' ?>
         </footer>
     </div>
+    <script>
+
+document.querySelectorAll("[class*='input'] ").forEach(input => {
+    let click=0;
+  input.addEventListener('click', event => {
+        click++;
+        let result= click%2;
+        let maxlength=input.attributes[3].value;
+        let type=input.attributes[0].value;
+            if (result!==0 && type==="text"){
+                    let spanInstruction=document.createElement("span");
+                    spanInstruction.className="instruction";
+                    input.parentNode.insertBefore(spanInstruction, input.nextSibling);
+                    let node=document.createTextNode(`Don't use more than ${maxlength} characters`);
+                    spanInstruction.appendChild(node);
+            }else if(result!==0 && type==="number"){
+                let spanInstruction=document.createElement("span");
+                spanInstruction.className="instruction";
+                input.parentNode.insertBefore(spanInstruction, input.nextSibling);
+                let node=document.createTextNode(`Use Number for this field`);
+                spanInstruction.appendChild(node);
+            }
+  });
+  input.addEventListener('blur',event=>{
+    document.querySelectorAll(".instruction").forEach(span => {
+                    span.style.display="none";
+                });
+  });
+
+});
+
+            </script>
 </body>
+</html>

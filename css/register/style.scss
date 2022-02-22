@@ -43,8 +43,12 @@
 }
 
 [class*='input'] {
-  &:focus {
-    $font-weight: 600;
+  &:invalid {
+    background-color: pink;
+  }
+  &:focus,
+  &:hover {
+    font-weight: 600;
     background-color: $light-blue;
   }
 }
@@ -68,6 +72,7 @@
 }
 
 .button {
+  grid-column: 1/13;
   grid-row: 10/11;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -77,10 +82,23 @@
     font-weight: 600;
   }
   @media screen and (min-width: 1000px) {
-    grid-column: 1/5;
+    grid-column: 1/13;
     font-size: large;
   }
 }
+.instructions {
+  display: none;
+  grid-column: 1/13;
+  text-align: center;
+  align-items: center;
+  color: $blue;
+  font-weight: 400;
+  margin-left: 0.8em;
+  @media screen and (min-width: 900px) {
+    grid-column: 1/13;
+  }
+}
+
 .footer {
   grid-row: 5/6;
 }

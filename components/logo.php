@@ -4,7 +4,7 @@
     </a>
 
     </li>
-    <li class="firstNavBar_MyAccount"><a class="link account" href="http://lvh.me/phpmotors/accounts/index.php?action=login">My Account</a></li>
+    <li class="firstNavBar_MyAccount"><a class="link account" href="/phpmotors/accounts/index.php?action=login">My Account</a></li>
 </ul>
 
 

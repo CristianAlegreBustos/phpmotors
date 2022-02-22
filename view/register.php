@@ -30,15 +30,16 @@
             ?>
             <form class="form form_Register" action="/phpmotors/accounts/index.php" method="POST" id="Register">
                 <label class="label_Firstname" for="clientFirstname">First Name</label>
-                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" required>
+                <input type="text" class="input_Firstname" name="clientFirstname" id="clientFirstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required placeholder="Enter your First Name" >
 
                 <label class="label_Lastname" for="clientLastname">Last Name</label>
-                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" required>
+                <input type="text" class="input_Lastname" name="clientLastname" id="clientLastname" <?php if(isset($clientLastname)){echo "value='$clientLastname'";}?> required placeholder="Enter your Last Name">
 
                 <label class="label_email"  for="clientEmail">Email</label>
-                <input class="input_email" name="clientEmail" id="clientEmail" type="text" required>
+                <input class="input_email" name="clientEmail" id="clientEmail" type="email" placeholder='Enter a valid email address' <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required >
                 <label class="label_pass" for="clientPassword">Password</label>
-                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" required>
+                <span class="instructions" id="instruction">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+                <input class="input_pass" name="clientPassword" id="clientPassword" type="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter your Password">
                 <input class="button" name="submit" type="submit" value="Register">
                 <!-- Add the action name - value pair -->
                 <input type="hidden" name="action" value="registerUser">
@@ -48,4 +49,27 @@
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/footer.php' ?>
         </footer>
     </div>
+
+    <script>
+    const elem = document.activeElement;
+    let inputPassword=document.getElementById("clientPassword");
+    let spanInstruction=document.getElementById('instruction');
+
+    inputPassword.addEventListener('mouseup',verify);
+    let click=0;
+    function verify(){
+        click++;
+        let result= click%2;
+        function displaySpan(){
+            if (inputPassword === document.activeElement && result!==0){
+                    spanInstruction.style.display="flex";
+            }else{
+                spanInstruction.style.display="none";
+            }
+        }
+
+        displaySpan();
+    }
+</script>
 </body>
+</html>

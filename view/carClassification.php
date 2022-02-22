@@ -33,8 +33,9 @@
                 <label class="label_NewClassification" for="classificationName">Classification Name</label>
                 <input type="text" class="input_NewClassification"
                 name="classificationName"
-                id="classificationName">
-                <input class="button classification" name="submit" type="submit" value="Add Classification">
+                id="classificationName" <?php if(isset($classificationName)){echo "value='$classificationName'";} ?> placeholder="Enter the new classification" required maxlength="30">
+                <span class="instructions" id="instruction">Don't use more than 30 characters</span>
+                <input class="button" name="submit" type="submit" value="Add Classification" >
                 <!-- Add the action name - value pair -->
                 <input type="hidden" name="action" value="updateCarClassification">
             </form>
@@ -44,3 +45,24 @@
         </footer>
     </div>
 </body>
+<script>
+    let inputClassification=document.getElementById("classificationName");
+    let spanInstruction=document.getElementById('instruction');
+
+    inputClassification.addEventListener('mouseup',verify);
+    let click=0;
+    function verify(){
+        click++;
+        let result= click%2;
+        function displaySpan(){
+            if (inputClassification === document.activeElement && result!==0){
+                    spanInstruction.style.display="flex";
+            }else{
+                spanInstruction.style.display="none";
+            }
+        }
+
+        displaySpan();
+    }
+</script>
+</html>

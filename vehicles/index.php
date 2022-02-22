@@ -7,25 +7,14 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the vehicles  model for use as needed
 require_once '../model/vehicles-model.php';
+//Get the database connection file
+require_once '../library/functions.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
 
-//var_dump($classifications);
-//exit;
-
-// Build a navigation bar using the $classifications array
-  $navList = '<ul class="navBar">';
-  $navList .= "<li class='navBar_links home'><a class='link' href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-  foreach ($classifications as $classification) {
-   $navList .= "<li class='navBar_links $classification[classificationName]'><a class='link' href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-  }
-  $navList .="<li class='others'><a class='link'></a></li>";
-  $navList .= '</ul>';
-
-//  echo $navList;
-//exit;
-
+//This function create the navBar. The function is stored in function.php
+$navList=createNavigatorBar($classifications);
 /* To continue I will create the dropdown select list using the $classification array
 *
 *
@@ -41,9 +30,9 @@ $classificationList .="</select>";
 //echo $classificationList;
 //exit;
 
-  $action = filter_input(INPUT_POST, 'action');
+  $action = trim(filter_input(INPUT_POST, 'action'));
 if ($action == NULL){
-  $action = filter_input(INPUT_GET, 'action');
+  $action = trim(filter_input(INPUT_GET, 'action'));
   }
 
   switch ($action){
@@ -51,23 +40,22 @@ if ($action == NULL){
      //echo 'You are in the register case statement.';
 
      // Filter and store the data
-     $invMake= filter_input(INPUT_POST,'invMake');
+     $invMake= trim(filter_input(INPUT_POST,'invMake',FILTER_SANITIZE_STRING));
      //echo $invMake;
-     $invModel=filter_input(INPUT_POST,'invModel');
+     $invModel=trim(filter_input(INPUT_POST,'invModel',FILTER_SANITIZE_STRING));
      //echo $invModel;
-     $invDescription=filter_input(INPUT_POST,'invDescription');
+     $invDescription=trim(filter_input(INPUT_POST,'invDescription',FILTER_SANITIZE_STRING));
     // echo $invDescription;
-     $invImage=filter_input(INPUT_POST,'invImage');
+     $invImage=trim(filter_input(INPUT_POST,'invImage',FILTER_SANITIZE_STRING));
      //echo $invImage;
-     $invThumbnail=filter_input(INPUT_POST,'invThumbnail');
+     $invThumbnail=trim(filter_input(INPUT_POST,'invThumbnail',FILTER_SANITIZE_STRING));
      //echo $invThumbnail;
-     $invPrice=filter_input(INPUT_POST,'invPrice');
+     $invPrice=trim(filter_input(INPUT_POST,'invPrice',FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION));
     // echo $invPrice;
-     $invStock=filter_input(INPUT_POST,'invStock');
-     //echo $invStock;
-     $invColor=filter_input(INPUT_POST,'invColor');
+     $invStock=trim(filter_input(INPUT_POST,'invStock',FILTER_SANITIZE_NUMBER_FLOAT));
+     $invColor=trim(filter_input(INPUT_POST,'invColor',FILTER_SANITIZE_STRING));
      //echo $invColor;
-     $classificationId=filter_input(INPUT_POST,'classificationId');
+     $classificationId=trim(filter_input(INPUT_POST,'classificationId',FILTER_SANITIZE_NUMBER_INT));
      //echo $classificationId;
 
      //Check for missiong data
@@ -77,10 +65,7 @@ if ($action == NULL){
         include '../view/addVehicles.php';
         exit;
      }
-
-
      //sending the data to the function regClient in the account model
-
      $InvUpdated=regNewVehicle($invMake,$invModel,$invDescription,$invImage,$invThumbnail,$invPrice,$invStock,$invColor,$classificationId);
      if($InvUpdated === 1){
        $message="<p class='display_sucess'>Thanks for registering the $invMake $invModel</p>";
@@ -92,10 +77,8 @@ if ($action == NULL){
       exit;
      }
      break;
-
-
     case 'updateCarClassification':
-      $classificationName =filter_input(INPUT_POST,'classificationName');
+      $classificationName =trim(filter_input(INPUT_POST,'classificationName', FILTER_SANITIZE_STRING));
       if (empty($classificationName)){
         $message = "<p class='display_error'>Please provide information for all empty form fields.</p>";
         include '../view/carClassification.php';
