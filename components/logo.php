@@ -4,7 +4,18 @@
     </a>
 
     </li>
-    <li class="firstNavBar_MyAccount"><a class="link account" href="/phpmotors/accounts/index.php?action=login">My Account</a></li>
+    <li class="firstNavBar_MyAccount">
+        <?php
+            if((isset($_SESSION['loggedin']))){
+                echo "<a class='account name link' href='/phpmotors/accounts/'>Welcome  ". $_SESSION['clientData']['clientFirstname']." </a>";
+                echo "<a class='link account' href='/phpmotors/accounts/index.php?action=LogOut'>|  Log Out  |</a>";
+            }else{
+                echo "<a class='link account' href='/phpmotors/accounts/index.php?action=login'>My Account</a>";
+                }
+        ?>
+    </li>
+
+
 </ul>
 
 

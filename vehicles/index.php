@@ -10,6 +10,9 @@ require_once '../model/vehicles-model.php';
 //Get the database connection file
 require_once '../library/functions.php';
 
+// Create or access a Session
+session_start();
+
 // Get the array of classifications
 $classifications = getClassifications();
 
@@ -103,6 +106,9 @@ if ($action == NULL){
         include '../view/carClassification.php';
         break;
     default:
+    // we dont want that a person enter in the vehicles managment
+    //by error so I configured the next statements.
+
         include '../view/vehicles.php';
     break;
     }

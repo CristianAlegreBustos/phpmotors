@@ -1,4 +1,8 @@
-
+<?php
+if(!isset($_SESSION['loggedin'])){
+    header('Location: /phpmotors/index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

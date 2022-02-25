@@ -29,9 +29,13 @@
                 if (isset($message)) {
                 echo $message;
                 }
-            ?>
+                ?>
+               <p class="display_sucess"><?php if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];}?>
+                </p>
 
-            <form class="form form_SingIn" action="" method="POST" id="SingIn">
+
+            <form class="form form_SingIn" action="/phpmotors/accounts/" method="POST" id="SingIn">
                 <label class="label_email"  for="clientEmail">Email</label>
                 <input class="input_email" name="clientEmail" id="clientEmail" type="email" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> placeholder='Enter a valid email address' required>
                 <label class="label_pass" for="clientPassword">Password</label>

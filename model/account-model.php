@@ -29,4 +29,46 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
  return $rowsChanged;
 }
 
+//The new function will check for an existing email address
+
+// Check for an existing email address
+function checkExistingEmail($clientEmail) {
+     // Create a connection object using the phpmotors connection function
+    $db =  phpmotorsConnect();
+     // The SQL statement that select the client Email that match with
+     //the value stored in the :email place holder
+    $sql = 'SELECT clientEmail FROM clients WHERE clientEmail = :email';
+     // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    // The next line replace the placeholders in the SQL
+    // statement with the actual values in the variables
+    // and tells the database the type of data it is
+    $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
+    // Insert the data to the table
+    $stmt->execute();
+    //We will check iif the input email is alredy in use it.
+    $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
+    // Close the database interaction
+    $stmt->closeCursor();
+    // if matchEmail is empty will return 0 (false);
+    if(empty($matchEmail)){
+     return 0;
+    } else {
+     return 1;
+    }
+
+    //end of function
+   }
+
+   // Get client data based on an email address
+function getClient($clientEmail){
+    $db = phpmotorsConnect();
+    $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword FROM clients WHERE clientEmail = :clientEmail';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+    $stmt->execute();
+    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $clientData;
+   }
 ?>
