@@ -16,7 +16,6 @@
     <div class="content">
         <header class="header">
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/logo.php' ?>
-            <?php //require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/navbar.php'?>
             <?php echo $navList?>
 
         </header>

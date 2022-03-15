@@ -71,7 +71,7 @@ switch ($action){
 
     if($regOutcome === 1){
       setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-      $_SESSION['message'] = "Thanks for registering $clientFirstname. Please use your email and password to login.";
+      $_SESSION['message'] = "<p class='display_sucess'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
       header('Location: /phpmotors/accounts/?action=login');
       exit;
      } else {
@@ -103,7 +103,7 @@ case 'Login':
     // If the hashes don't match create an error
     // and return to the login view
     if(!$hashCheck) {
-      $message = '<p class="notice">Please check your password and try again.</p>';
+      $message = '<p class="display_error">Please check your password and try again.</p>';
       include '../view/login.php';
       exit;
     }
@@ -119,10 +119,72 @@ case 'Login':
     // Send them to the admin view
     include '../view/admin.php';
     exit;
-  case "LogOut":
-    session_unset();
-    //$_SESSION = array(); it was deprecated
-    session_destroy();
+  break;
+  case "AccountManagment":
+    $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
+    $invInfo = getAccountInfo($clientId);
+    if(count($invInfo)<1){
+     $message = 'Sorry, no account information could be found.';
+    }
+    include '../view/client-update.php';
+    exit;
+  case "updateUser":
+    $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+    $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING));
+    $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
+    $clientEmail = checkEmail($clientEmail);
+    $clientId=filter_input(INPUT_POST,'clientId',FILTER_SANITIZE_NUMBER_INT);
+
+    $existingEmail = checkExistingEmail($clientEmail);
+
+
+    if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)){
+      $messageUpdated = "<p class='display_error'>Please provide information for all empty form fields.</p>";
+      include '../view/client-update.php';
+      exit;
+    }
+    $updateResult=updateAccountInfo($clientEmail,$clientLastname,$clientFirstname,$clientId);
+    if ($updateResult){
+      $message = "<p class='display_sucess'>Congratulations, $clientFirstname $clientLastname your information was successfully updated.</p>";
+      $_SESSION['messageUpdated'] = $message;
+      header('Location: /phpmotors/accounts/index.php');
+      exit;
+    }else{
+      $messageUpdated = "<p class='display_error'>Error. Your account was not updated.</p>";
+    include '../view/client-update.php';
+    exit;
+    }
+    break;
+    case "updatePassword":
+      $clientId=filter_input(INPUT_POST,'clientId',FILTER_SANITIZE_NUMBER_INT);
+      $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
+      $checkPassword = checkPassword($clientPassword);
+      if($checkPassword === 0 || empty($checkPassword)){
+
+        $messageUpdated = '<p class="display_error pass_error">The password must be at least 8 characters, at least 1 capital letter, at least 1 number and at least 1 special character.</p>';
+        include '../view/client-update.php';
+          exit;
+      }
+
+      // Hash the checked password
+    $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
+    $updatePass=UpdatePass($clientId,$hashedPassword);
+    if ($updatePass==1){
+      $_SESSION['messageUpdated'] = "<p class='display_sucess '>Your password has been updated. Your new password is $clientPassword</p>";
+      header('Location: /phpmotors/accounts/index.php');
+      exit;
+    }else{
+      $messageUpdated = '<p class="display_error">Sorry  but the password was not updated. Please try again.</p>';
+      include '../view/client-update.php';
+      exit;
+    }
+    break;
+
+    case "LogOut":
+      session_unset();
+      //$_SESSION = array(); it was deprecated
+      session_destroy();
   default:
   include '../view/admin.php';
     break;

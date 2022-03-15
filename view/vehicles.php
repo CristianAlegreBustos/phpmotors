@@ -1,6 +1,12 @@
 <?php
-if(!isset($_SESSION['loggedin'])){
-    header('Location: /phpmotors/index.php');
+
+if ($_SESSION['clientData']['clientLevel'] < 2) {
+    header('location: /phpmotors/');
+    exit;
+   }
+
+if(isset($_SESSION['message'])){
+    $message=$_SESSION['message'];
 }
 ?>
 <!DOCTYPE html>
@@ -33,9 +39,33 @@ if(!isset($_SESSION['loggedin'])){
                 </li>
                 <li class="option_vehicles"><a href="/phpmotors/vehicles/index.php?action=addVehicles" target="_blank">Add vehicles</a></li>
             </ul>
+        <div class="form_crud">
+            <?php
+            //the next code will display the message if there is one and the header, directions and classification list.
+                if (isset($message)) {
+                echo $message;
+                }
+                if (isset($classificationList)) {
+                echo '<h2 class="title h2">Vehicles By Classification</h2>';
+                echo '<p class="info_text">Choose a classification to see those vehicles</p>';
+                echo $classificationList;
+                }
+            ?>
+
+            <noscript>
+                <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+            </noscript>
+
+            <table id="inventoryDisplay"></table>
+            </div>
         </main>
+
         <footer class="footer">
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/footer.php' ?>
         </footer>
+
     </div>
 </body>
+<script src="../js/inventory.js"></script>
+</html>
+<?php unset($_SESSION['message']); ?>
