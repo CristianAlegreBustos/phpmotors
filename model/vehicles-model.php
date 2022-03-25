@@ -125,7 +125,7 @@ function getInvItemInfo($invId){
 function getVehiclesByClassification($classificationName){
    //this function will get a list of vehicles based on the classification.
    $db = phpmotorsConnect();
-   $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+   $sql = 'SELECT * FROM images JOIN inventory ON images.invId=inventory.invId WHERE images.imgPrimary LIKE 1 AND images.imgPath LIKE "%-tn.%" AND inventory.classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName);';
    $stmt = $db->prepare($sql);
    $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
    $stmt->execute();
@@ -144,6 +144,15 @@ function getVehiclesByClassification($classificationName){
    $stmt->closeCursor();
    return $vehicles;
   }
-
+  // Get information for all vehicles
+  function getVehicles(){
+     $db = phpmotorsConnect();
+     $sql = 'SELECT invId, invMake, invModel FROM inventory';
+     $stmt = $db->prepare($sql);
+     $stmt->execute();
+     $invInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     $stmt->closeCursor();
+     return $invInfo;
+  }
 
 ?>

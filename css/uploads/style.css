@@ -1,0 +1,229 @@
+.content_upload {
+  grid-template-rows: 0.01fr 1fr repeat(9, 0.1rem) 0.02fr;
+}
+@media screen and (min-width: 700px) {
+  .content_upload {
+    grid-template-rows: 0.1fr 0.65fr repeat(9, 0.5fr) 0.02fr;
+  }
+}
+@media screen and (min-width: 800px) {
+  .content_upload {
+    grid-template-rows: 0.1fr 0.65fr repeat(9, 0.5fr) 0.02fr;
+    max-width: 85%;
+    margin: 0 auto;
+    border: 8px solid #4c96d7;
+    border-radius: 0.5em 0.5em;
+  }
+}
+
+.main {
+  display: flex;
+  grid-row: 2/12;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .title {
+    font-size: 2.5em;
+  }
+}
+
+.h2 {
+  font-size: 1.5em;
+  font-family: "Teko", sans-serif;
+  font-weight: 200;
+  margin-left: 2em;
+}
+@media screen and (min-width: 900px) {
+  .h2 {
+    font-size: 2em;
+  }
+}
+
+.form_upload {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+@media screen and (min-width: 700px) {
+  .form_upload {
+    margin: auto 20%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .form_upload {
+    margin: auto 25%;
+  }
+}
+
+.label {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
+}
+@media screen and (min-width: 700px) {
+  .label {
+    font-size: large;
+  }
+}
+@media screen and (min-width: 900px) {
+  .label {
+    font-size: x-large;
+    font-weight: 400;
+  }
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_classification {
+  display: flex;
+  font-family: "Source Code Pro", monospace;
+  font-size: medium;
+  align-items: center;
+  background-color: #ffffff;
+  appearance: none;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  height: 2em;
+}
+.select_classification:hover {
+  font-size: large;
+}
+@media screen and (min-width: 700px) {
+  .select_classification {
+    font-size: large;
+    font-weight: 400;
+  }
+}
+.select_classification:hover {
+  font-weight: 600;
+}
+@media screen and (min-width: 900px) {
+  .select_classification {
+    font-size: x-large;
+    font-weight: 400;
+  }
+}
+.select_classification:hover {
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.button {
+  background-color: #a6cbeb;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  font-size: large;
+  margin-left: 0.8rem;
+  cursor: pointer;
+  appearance: none;
+  border: 0.2rem solid #4c96d7;
+  border-radius: 0.5rem;
+}
+.button:hover {
+  background-color: #4c96d7;
+  border: 0.2rem solid #a6cbeb;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    grid-column: 1/13;
+  }
+}
+@media screen and (min-width: 900px) {
+  .button {
+    grid-column: 1/13;
+    font-size: large;
+    font-weight: 800;
+    grid-row: 9/10;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .button {
+    grid-column: 1/13;
+    font-size: larger;
+  }
+}
+
+.display_error, .display_sucess {
+  text-align: center;
+  color: red;
+  font-weight: 500;
+  margin-left: 0.8em;
+}
+@media screen and (min-width: 900px) {
+  .display_error, .display_sucess {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .display_error, .display_sucess {
+    font-size: 170%;
+  }
+}
+
+.display_sucess {
+  color: #3a3a3a;
+}
+
+.p {
+  font-family: "Source Code Pro", monospace;
+  font-size: larger;
+}
+
+.display_image {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0em;
+}
+@media screen and (min-width: 750px) {
+  .display_image {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.individual_image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+}
+@media screen and (min-width: 750px) {
+  .individual_image {
+    width: 20%;
+  }
+}
+
+.hr {
+  border: 0.5em solid #3a3a3a;
+  width: 90%;
+  display: flex;
+}
+
+.footer {
+  grid-row-start: 12;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  grid-template-rows: none;
+}
+
+/*# sourceMappingURL=style.css.map */

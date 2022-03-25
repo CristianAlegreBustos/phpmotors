@@ -25,6 +25,9 @@
             <?php if(isset($vehicleDisplay)){
             echo $vehicleDisplay;
             } ?>
+            <?php if(isset($thumbDisplay)){
+            echo $thumbDisplay;
+            } ?>
         </div>
 
         </main>

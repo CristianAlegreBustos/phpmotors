@@ -7,6 +7,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the vehicles  model for use as needed
 require_once '../model/vehicles-model.php';
+// Get the uploads  model for use as needed
+require_once '../model/uploads-model.php';
 //Get the database connection file
 require_once '../library/functions.php';
 
@@ -199,11 +201,17 @@ if ($action == NULL){
   case 'carDisplayDetail':
     $classificationName=filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
     $invId=filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
-    $DisplayDetail=getVehiclesDetail($invId);//in the model
+    $DisplayDetail=getVehiclesDetail($invId);//in the Vehicles model
+    $DisplayThumbImage=getImageThumbByClassification($invId);//uploadsModel
     if (!count($DisplayDetail)){
-      $message = "<p class='info_text'>Sorry, no vehicles could be found with the id = $classificationId.</p>";
+      $message = "<p class='info_text'>Sorry, no vehicles could be found with the id = $invId.</p>";
     } else {
       $vehicleDisplay= displayDetail( $DisplayDetail);//in the functions.php
+    }
+    if (!count($DisplayThumbImage)){
+      $message = "<p class='info_text'>Sorry, no thumbnail vehicles images could be found with the id = $invId.</p>";
+    } else {
+      $thumbDisplay= displayThumb($DisplayThumbImage);//in the functions.php
     }
 
     include '../view/vehiclesDetail.php';
