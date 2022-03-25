@@ -80,6 +80,9 @@ html {
 }
 .thumbnail_img {
   width: 100%;
+  @media screen and (min-width: 470px) {
+    width: 80%;
+  }
 }
 
 .info_text,
@@ -99,6 +102,9 @@ html {
 .img {
   max-width: 100%;
   margin: 1em;
+  @media screen and (min-width: 470px) {
+    width: 80%;
+  }
 }
 
 .cntnt_classification {
