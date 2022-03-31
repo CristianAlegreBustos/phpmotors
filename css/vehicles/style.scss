@@ -352,3 +352,72 @@
 .input_description {
   height: 5em;
 }
+
+.review_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-blue;
+  font-family: $paragraph-fonts;
+  @media screen and (min-width: 700px) {
+    margin: auto 20%;
+  }
+}
+.button_wrapper {
+  display: flex;
+  align-self: flex-end;
+  column-gap: 0.5em;
+  background-color: $white;
+  width: 100%;
+}
+[class*='buttom'] {
+  appearance: none;
+  background-color: $blue;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  font-size: medium;
+  font-family: $paragraph-fonts;
+  border: 0.2em solid $gray;
+  cursor: pointer;
+}
+.update_buttom,
+.delete_buttom {
+  display: none;
+}
+.edit_buttom {
+  display: flex;
+}
+.user_name {
+  align-self: flex-start;
+  margin: 0.5em;
+  font-weight: 600;
+  font-size: small;
+}
+.review_text {
+  display: block;
+  width: 100%;
+  background-color: $blue;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 0%;
+  &:disabled {
+    color: black;
+  }
+  &:focus {
+    outline: none;
+    background-color: $gray;
+    color: $white;
+  }
+}
+
+.text {
+  padding-top: 0.5em;
+  text-align: center;
+  padding-bottom: 0.5em;
+  font-size: medium;
+}
+.review_date {
+  align-self: flex-end;
+  margin: 0.5em;
+  font-size: small;
+}

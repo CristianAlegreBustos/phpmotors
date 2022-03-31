@@ -100,12 +100,22 @@ html {
   }
 }
 
+.info_review {
+  display: block;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+}
+
 .info_text,
 .info_color,
 .info_price,
 .info_stock {
   display: flex;
   font-family: "Source Code Pro", monospace;
+}
+
+.info_title {
+  text-align: center;
 }
 
 .info_color,
@@ -138,6 +148,115 @@ html {
 
 .span_description {
   color: #fffffF;
+}
+
+.notice {
+  align-self: center;
+  display: block;
+  color: red;
+  text-align: center;
+}
+
+[class*=label] {
+  font-family: "Source Code Pro", monospace;
+  font-size: medium;
+  font-weight: 600;
+  margin-left: 0.8rem;
+  margin-top: 0.3rem;
+}
+@media screen and (min-width: 700px) {
+  [class*=label] {
+    grid-column: 1/13;
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 900px) {
+  [class*=label] {
+    grid-column: 1/13;
+    font-size: 100%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  [class*=label] {
+    grid-column: 1/13;
+    font-size: 130%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+@media screen and (min-width: 750px) {
+  .form {
+    margin: auto 20%;
+  }
+}
+
+.button {
+  background-color: #a6cbeb;
+  font-size: large;
+  font-family: "Source Code Pro", monospace;
+  margin-left: 0.8rem;
+  cursor: pointer;
+  appearance: none;
+  border: 0.2rem solid #4c96d7;
+  border-radius: 0.5rem;
+}
+.button:hover {
+  background-color: #4c96d7;
+  border: 0.2rem solid #a6cbeb;
+}
+@media screen and (min-width: 900px) {
+  .button {
+    font-size: large;
+    font-weight: 800;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .button {
+    font-size: larger;
+  }
+}
+
+.review_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a6cbeb;
+  font-family: "Source Code Pro", monospace;
+}
+@media screen and (min-width: 700px) {
+  .review_wrapper {
+    margin: auto 20%;
+  }
+}
+
+.user_name {
+  align-self: flex-start;
+  margin: 0.5em;
+  font-weight: 600;
+  font-size: small;
+}
+
+.review_text {
+  display: block;
+  width: 100%;
+  background-color: #4c96d7;
+}
+
+.text {
+  padding-top: 0.5em;
+  text-align: center;
+  padding-bottom: 0.5em;
+  font-size: medium;
+}
+
+.review_date {
+  align-self: flex-end;
+  margin: 0.5em;
+  font-size: small;
 }
 
 /*# sourceMappingURL=style.css.map */

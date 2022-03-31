@@ -7,6 +7,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the account  model for use as needed
 require_once '../model/account-model.php';
+// Get the reviews model for use as needed
+require_once '../model/reviews-model.php';
 //Get the function connection file
 require_once '../library/functions.php';
 
@@ -117,7 +119,7 @@ case 'Login':
     $_SESSION['clientData'] = $clientData;
 
     // Send them to the admin view
-    include '../view/admin.php';
+    header("Location:/phpmotors/accounts/index.php");
     exit;
   break;
   case "AccountManagment":
@@ -186,6 +188,14 @@ case 'Login':
       //$_SESSION = array(); it was deprecated
       session_destroy();
   default:
+      $clientId=$_SESSION['clientData']['clientId'];
+      $reviewClient=getReviewByclient($clientId);
+      if(!count($reviewClient)){
+        $messageReview = "<p class='display_sucess'>There is not Reviews for this car.</p>";
+      }else{
+        $displayReviewClient=DisplayReviewClient($reviewClient);//In the function.php
+      }
+
   include '../view/admin.php';
     break;
  }

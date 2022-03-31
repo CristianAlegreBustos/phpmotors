@@ -27,6 +27,59 @@ function createNavigatorBar($classifications){
   return $navList;
    }
 
+function DisplayReview($getReviewByCar){
+  //display Review in the vehicle Detail
+  $review="<div>";
+  foreach ($getReviewByCar as $data) {
+    $abrName=substr($data['clientFirstname'],0,1) .". ". $data['clientLastname'];
+    $review.= '<div class="review_wrapper">';
+    $review.="<p class='user_name'>$abrName</p>";
+    $review.="<div class='review_text'>";
+    $review.="<p class='text'>$data[reviewText]</p>";
+    $review.="</div>";
+    $review.="<p class='review_date'>".date("Y-m-d | h:i:sa",strtotime($data['reviewDate']))."</p>";
+
+    $review.="</div>";
+    $review.="<br>";
+  }
+  $review.="</div>";
+
+  return $review;
+}
+
+function DisplayReviewClient($getReviewByCar){
+  //display Review in the admin account
+  $review="<div>";
+  foreach ($getReviewByCar as $data) {
+    $abrName=substr($data['clientFirstname'],0,1) .". ". $data['clientLastname'];
+    $review.= '<form  method="POST" class="form review_wrapper" id="reviewComment" action="/phpmotors/reviews/index.php">';
+    $review.="<p class='user_name'>$abrName</p>";
+    $review.="<textarea name='reviewText' id='reviewText.$data[reviewId]' class='input review_text' form='reviewComment' placeholder='Enter your comments here' disabled>";
+    $review.=$data['reviewText'];
+    $review.='</textarea>';
+    $review.="<p class='review_date'>".date("Y-m-d | h:i:sa",strtotime($data['reviewDate']))."</p>";
+    $review.="<div class='button_wrapper'>";
+    $review.="<input class='edit_buttom' id='$data[reviewId]' type='input' name='other' value='Edit' onclick='displayOtherButtons(this);'>";
+    //add Eventlisten to stop the submit. But, display the update buttom, delete buttom and unlick the text area.
+
+    $review.="<input class='update_buttom' id='update_buttom.$data[reviewId]' type='submit' name='action' value='Update' onmouseover='DeleteInputName(this)'>";
+    //add Event listener to change the delete name in the delete buttom.
+
+    $review.="<input class='delete_buttom' id='delete_buttom.$data[reviewId]' type='submit' name='action' value='Delete' onmouseover='restoreName(this)'>";
+    //add Event listener to change the Update name in the update buttom.
+    $review.="</div>";
+    $review .= '<!-- hidden inputs -->';
+    $review .= '<!-- reviewId input -->';
+    $review.="<input type='hidden' name='reviewId' value=". $data['reviewId']."> ";
+    $review.="</form>";
+    $review.="<br>";
+  }
+  $review.="</div>";
+
+  return $review;
+}
+
+
    // Build the classifications select list
 function buildClassificationList($classifications){
    $classificationList = '<select name="classificationId" id="classificationList" class="select_classification">';
@@ -43,7 +96,7 @@ function buildClassificationList($classifications){
    $dv = '<ul class="table" id="inv-display">';
    foreach ($vehicles as $vehicle) {
     $dv .= '<li class="table_item">';
-    $dv .= "<img class='img' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+    $dv .= "<img class='img' src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
     $dv .= '<div class="description_box">';
     $dv .= "<h2 class='h2'><a class='link' target='_blank' href='/phpmotors/vehicles/index.php?action=carDisplayDetail&classificationName=".urlencode($vehicle['invMake']." ".$vehicle['invModel'])."&invId=".urlencode($vehicle['invId'])."'>$vehicle[invMake] $vehicle[invModel] </a></h2>";
     $dv .= "<span class='span_description'>$vehicle[invPrice]</span>";

@@ -60,7 +60,38 @@ if(isset($_SESSION['messageUpdated'])){
                     echo "<a class='account links' href='/phpmotors/vehicles/index.php'>Vehicles Managment</a>";
                 }
            ?>
+           <h1 class="title info_title">Customer Reviews</h1>
+           <?php if(isset($displayReviewClient)){
+                echo $displayReviewClient;
+            }else{
+                echo $messageReview;
+            }
+        ?>
+
         </main>
+    <script>
+
+        function displayOtherButtons(x){
+            debugger;
+            event.preventDefault();
+            debugger;
+            let id =x.id;
+            x.style.display="none";
+            let update_buttom=document.getElementById(`update_buttom.${id}`).style.display="inline";
+            let delete_buttom=document.getElementById(`delete_buttom.${id}`).style.display="inline";
+            let textarea=document.getElementById(`reviewText.${id}`).disabled=false;
+
+        }
+        function DeleteInputName(x){
+            let id=x.id.split(".")[1];
+            let delete_buttom=document.getElementById(`delete_buttom.${id}`).removeAttribute('name');
+        }
+
+        function restoreName(x){
+            x.name="action";
+        }
+
+    </script>
         <footer class="footer">
             <?php require_once $_SERVER['DOCUMENT_ROOT']. '/phpmotors/components/footer.php' ?>
         </footer>

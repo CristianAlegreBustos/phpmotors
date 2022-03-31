@@ -9,6 +9,8 @@ require_once '../model/main-model.php';
 require_once '../model/vehicles-model.php';
 // Get the uploads  model for use as needed
 require_once '../model/uploads-model.php';
+// Get the uploads  model for use as needed
+require_once '../model/reviews-model.php';
 //Get the database connection file
 require_once '../library/functions.php';
 
@@ -203,6 +205,7 @@ if ($action == NULL){
     $invId=filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
     $DisplayDetail=getVehiclesDetail($invId);//in the Vehicles model
     $DisplayThumbImage=getImageThumbByClassification($invId);//uploadsModel
+    $getReviewByCar=getReviewByCar($invId);//review-model
     if (!count($DisplayDetail)){
       $message = "<p class='info_text'>Sorry, no vehicles could be found with the id = $invId.</p>";
     } else {
@@ -214,11 +217,15 @@ if ($action == NULL){
       $thumbDisplay= displayThumb($DisplayThumbImage);//in the functions.php
     }
 
+    if(!count($getReviewByCar)){
+      $messageReview = "<p class='info_review'>There is not Reviews for this car.</p>";
+      }else{
+      $displayReview=DisplayReview($getReviewByCar);//In the function.php
+    }
     include '../view/vehiclesDetail.php';
       break;
   default:
-    // we dont want that a person enter in the vehicles managment
-    //by error so I configured the next statements.
+
     $classificationList = buildClassificationList($classifications);
         include '../view/vehicles.php';
     break;

@@ -423,4 +423,82 @@
   height: 5em;
 }
 
+.review_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a6cbeb;
+  font-family: "Source Code Pro", monospace;
+}
+@media screen and (min-width: 700px) {
+  .review_wrapper {
+    margin: auto 20%;
+  }
+}
+
+.button_wrapper {
+  display: flex;
+  align-self: flex-end;
+  column-gap: 0.5em;
+  background-color: #fffffF;
+  width: 100%;
+}
+
+[class*=buttom] {
+  appearance: none;
+  background-color: #4c96d7;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  font-size: medium;
+  font-family: "Source Code Pro", monospace;
+  border: 0.2em solid #8d8d8d;
+  cursor: pointer;
+}
+
+.update_buttom,
+.delete_buttom {
+  display: none;
+}
+
+.edit_buttom {
+  display: flex;
+}
+
+.user_name {
+  align-self: flex-start;
+  margin: 0.5em;
+  font-weight: 600;
+  font-size: small;
+}
+
+.review_text {
+  display: block;
+  width: 100%;
+  background-color: #4c96d7;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 0%;
+}
+.review_text:disabled {
+  color: black;
+}
+.review_text:focus {
+  outline: none;
+  background-color: #8d8d8d;
+  color: #fffffF;
+}
+
+.text {
+  padding-top: 0.5em;
+  text-align: center;
+  padding-bottom: 0.5em;
+  font-size: medium;
+}
+
+.review_date {
+  align-self: flex-end;
+  margin: 0.5em;
+  font-size: small;
+}
+
 /*# sourceMappingURL=style.css.map */
