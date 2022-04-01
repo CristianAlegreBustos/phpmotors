@@ -1,5 +1,5 @@
 .content {
-  grid-template-rows: 0.5fr 0.4fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
 }
 .content_addVehicles {
   display: grid;
@@ -482,7 +482,7 @@
 .review_text:disabled {
   color: black;
 }
-.review_text:focus {
+.review_text:focus, .review_text:enabled {
   outline: none;
   background-color: #8d8d8d;
   color: #fffffF;
@@ -499,6 +499,36 @@
   align-self: flex-end;
   margin: 0.5em;
   font-size: small;
+}
+
+.alert_danger {
+  color: #000;
+  background-color: pink;
+  background-image: none;
+  border-color: #333;
+  background: #f8d7da linear-gradient(180deg, #f9dde0, #f8d7da) repeat-x;
+  cursor: pointer;
+}
+
+.alert {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.5em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px #fff inset;
+  background-position: 10px 50%;
+  left: 50%;
+  top: 50%;
+  position: sticky;
+}
+@media screen and (min-width: 750px) {
+  .alert {
+    margin: auto 20%;
+  }
+}
+.alert:hover {
+  border: 0.5em solid rgba(255, 255, 0, 0.438);
 }
 
 /*# sourceMappingURL=style.css.map */
