@@ -52,14 +52,14 @@ function DisplayReviewClient($getReviewByCar){
   $review="<div>";
   foreach ($getReviewByCar as $data) {
     $abrName=substr($data['clientFirstname'],0,1) .". ". $data['clientLastname'];
-    $review.= '<form  method="POST" class="form review_wrapper" id="reviewComment" action="/phpmotors/reviews/index.php">';
+    $review.= '<form  method="POST" class="form review_wrapper"'." id='review_text.$data[reviewId]' action='/phpmotors/reviews/index.php'>";
     $review.="<p class='user_name'>$abrName</p>";
-    $review.="<textarea name='reviewText' id='reviewText.$data[reviewId]' class='input review_text' form='reviewComment' placeholder='Enter your comments here' disabled>";
+    $review.="<textarea name='reviewText' id='reviewText.$data[reviewId]' form='review_text.$data[reviewId]' class='input review_text' placeholder='Enter your comments here' disabled required>";
     $review.=$data['reviewText'];
     $review.='</textarea>';
     $review.="<p class='review_date'>".date("Y-m-d | h:i:sa",strtotime($data['reviewDate']))."</p>";
     $review.="<div class='button_wrapper'>";
-    $review.="<input class='edit_buttom' id='$data[reviewId]' type='input' name='other' value='Edit' onclick='displayOtherButtons(this);'>";
+    $review.="<input class='edit_buttom' id='$data[reviewId]' type='submit' name='other' value='Edit' onclick='displayOtherButtons(this)'>";
     //add Eventlisten to stop the submit. But, display the update buttom, delete buttom and unlick the text area.
 
     $review.="<input class='update_buttom' id='update_buttom.$data[reviewId]' type='submit' name='action' value='Update' onmouseover='DeleteInputName(this)'>";

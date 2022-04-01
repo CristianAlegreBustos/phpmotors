@@ -3,7 +3,7 @@ $abrName=substr($_SESSION['clientData']['clientFirstname'],0,1) .". ".$_SESSION[
 
 $form= '<form  method="POST" class="form enter_review" id="reviewComment" action="/phpmotors/reviews/index.php?" action="addNewReview" >';
 $form .="<label class='label user_name'>$abrName</label>";
-$form .='<textarea name="reviewText" id="reviewText" class="input_reviewText" form="reviewComment" placeholder="Enter your comments here"></textarea>';
+$form .='<textarea name="reviewText" id="reviewText" class="input_reviewText" form="reviewComment" placeholder="Enter your comments here" required></textarea>';
 $form .= '<input class="button" type="submit" name="submit" value="Comment">';
 $form .= '<!-- hidden inputs -->';
 $form .= '<!-- clientId input -->';
@@ -75,6 +75,12 @@ if(isset($_SESSION['message'])){
             }else{
                 echo $messageReview;//from the vehicles controller
             }
+            if (isset($_SESSION['messageData'])){
+                echo $_SESSION['messageData'];
+            unset($_SESSION['messageData']);
+            }
+
+
         ?>
         </main>
         <footer class="footer">

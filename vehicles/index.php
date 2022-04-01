@@ -222,6 +222,7 @@ if ($action == NULL){
       }else{
       $displayReview=DisplayReview($getReviewByCar);//In the function.php
     }
+
     include '../view/vehiclesDetail.php';
       break;
   default:

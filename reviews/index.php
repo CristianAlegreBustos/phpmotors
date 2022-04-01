@@ -12,7 +12,7 @@ require_once '../model/reviews-model.php';
 //Get the function connection file
 require_once '../library/functions.php';
 
-
+session_start();
 
 $action = trim(filter_input(INPUT_POST, 'action'));
 if ($action == NULL){
@@ -28,8 +28,8 @@ switch ($action){
 
       //Check for missiong data
       if(empty($invId) || empty($clientId) || empty($carName)|| empty($reviewText)){
-        $message = "<p class='display_error'>Please provide information for all empty form fields.</p>";
-        $_SESSION['message'] = $message;
+        $_SESSION['messageData']= "<p class='info_text notice'>Please provide information for all empty form fields.</p>";
+
         header("Location:/phpmotors/vehicles/index.php?action=carDisplayDetail&classificationName=$carName&invId=$invId");
         exit;
       }
@@ -37,6 +37,7 @@ switch ($action){
       $addReview=submitReview($invId,$clientId,$reviewText);
 
       if ($addReview){
+        $messageUpdateError="<p class='info_text'>Review Updated.</p>";
         header("Location:/phpmotors/vehicles/index.php?action=carDisplayDetail&classificationName=$carName&invId=$invId");
         exit;
       }
@@ -47,18 +48,43 @@ case 'Update':
 
   //Check for missiong data
   if(empty($reviewId) || empty($reviewText)){
-    $message = "<p class='display_error'>Please provide information for all empty form fields.</p>";
+    $messageUpdateError = "<div class='alert alert_danger' onclick=";
+    $messageUpdateError.='this.style.display="none"';
+    $messageUpdateError.=">";
+
+    $messageUpdateError .= "<p class='info_text notice'> You can't submit an empty comment. The review was not updated</p>
+    <br>
+    <br>
+    <span class='review_date'>Touch here to close</span></div>";
     include '../accounts/index.php';
     exit;
   }
 
   $updateReview=updateSpecificReview($reviewText,$reviewId);
   if ($updateReview){
-    $message="The comment was updated sucessfuly";
+    $messageUpdate = "<div class='alert alert_danger' onclick=";
+    $messageUpdate.='this.style.display="none"';
+    $messageUpdate.=">";
+
+    $messageUpdate .= "<p class='info_text notice'> The comment was updated sucessfuly</p>
+    <br>
+    <br>
+    <span class='review_date'>Touch here to close</span></div>";
+
+    $_SESSION['messageUpdate']=$messageUpdate;
     header("Location:/phpmotors/accounts/index.php");
     exit;
   }else{
-    $message="The comment was not updated";
+    $messageError = "<div class='alert alert_danger' onclick=";
+    $messageError.='this.style.display="none"';
+    $messageError.=">";
+
+    $messageError .= "<p class='info_text notice'> The comment was not updated</p>
+    <br>
+    <br>
+    <span class='review_date'>Touch here to close</span></div>";
+
+    $_SESSION['messageError']=$messageError;
     header("Location:/phpmotors/accounts/index.php");
     exit;
   }
@@ -68,11 +94,28 @@ case 'Update':
 
     $delete=deleteReview($reviewId);
     if ($delete){
-      $message="The comment was updated sucessfuly";
+      $message = "<div class='alert alert_danger' onclick=";
+    $message.='this.style.display="none"';
+    $message.=">";
+
+    $message.= "<p class='info_text notice'> The comment was delete sucessfuly</p>
+    <br>
+    <br>
+    <span class='review_date'>Touch here to close</span></div>";
+    $_SESSION['messageUpdate']=$message;
       header("Location:/phpmotors/accounts/index.php");
       exit;
     }else{
-      $message="The comment was not updated";
+      $message = "<div class='alert alert_danger' onclick=";
+    $message.='this.style.display="none"';
+    $message.=">";
+
+    $message.= "<p class='info_text notice'> The comment wasn't delete sucessfuly</p>
+    <br>
+    <br>
+    <span class='review_date'>Touch here to close</span></div>";
+    $_SESSION['messageUpdate']=$message;
+
       header("Location:/phpmotors/accounts/index.php");
       exit;
     }

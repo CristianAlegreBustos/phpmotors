@@ -8,6 +8,7 @@ $clientId=$_SESSION['clientData']['clientId'];
 if(isset($_SESSION['messageUpdated'])){
     $messageAccount=$_SESSION['messageUpdated'];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,19 @@ if(isset($_SESSION['messageUpdated'])){
 
         </header>
         <main class="main">
+        <?php
+        if(isset($messageUpdateError)){
+            echo $messageUpdateError;
+            }
+        if (isset($_SESSION['messageUpdate'])) {
+            echo $_SESSION['messageUpdate'];
+            unset($_SESSION['messageUpdate']);
+            }
+        if (isset($_SESSION['messageError'])) {
+            echo $_SESSION['messageError'];
+            unset($_SESSION['messageError']);
+            }
+            ?>
            <h1 class="title">
                <?php echo $_SESSION['clientData']['clientFirstname'];?> <?php echo $_SESSION['clientData']['clientLastname'];?>
            </h1>
@@ -43,6 +57,7 @@ if(isset($_SESSION['messageUpdated'])){
           <?php if (isset($messageAccount)) {
                 echo $messageAccount;
                 }
+
             ?>
            <h2 class="title h2">Account Managment</h2>
            <p class="information auth"> Use this link to update account information.</p>
@@ -60,12 +75,13 @@ if(isset($_SESSION['messageUpdated'])){
                     echo "<a class='account links' href='/phpmotors/vehicles/index.php'>Vehicles Managment</a>";
                 }
            ?>
-           <h1 class="title info_title">Customer Reviews</h1>
+           <h1 class="title info_title">Your Reviews</h1>
            <?php if(isset($displayReviewClient)){
                 echo $displayReviewClient;
             }else{
                 echo $messageReview;
             }
+
         ?>
 
         </main>
